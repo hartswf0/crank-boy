@@ -87,16 +87,21 @@ footer{text-align:center;font-size:14px;color:var(--muted)}
   </div>
 
   <section class="sheet hero">
-    <div class="eyebrow">A game after a postcard from 1910</div>
-    <h1>The Crank Boy</h1>
+    <div style="display:flex;align-items:center;gap:12px">
+      <img src="assets/favicon.svg" alt="The Crank Boy favicon" width="44" height="44" style="border:1.5px solid var(--ink);background:var(--wall);flex-shrink:0">
+      <div>
+        <div class="eyebrow">A game after a postcard from 1910</div>
+        <h1>The Crank Boy</h1>
+      </div>
+    </div>
     <p class="lede">You turn the crank that powers the lesson. You are the only one in the room who is not wired in, and the only one who can see which books go into the machine.</p>
     <p>Crank steadily and the class receives the books clearly. Stop, and six heads lift to look at you. While the machine is silent you can open the hopper, read the page, swap the book, pull a wire, or read aloud. At the bell the teacher asks one question and grades the answers against his own copy.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="play/v1.html">Play lesson one</a><a class="btn" href="play/v5.html">Play version 5, The Class Book</a></div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="play/v1.html">Play lesson one</a><a class="btn" href="play/v5.html">Play version 5, The Class Book</a><a class="btn" href="play/v6.html">Play version 6, Le Contre-Livre</a></div>
   </section>
 
   <section class="sheet" id="versions">
     <h2>Versions</h2>
-    <p>Each version changes one relationship in the room. Versions 1 and 5 are built. Versions 2 to 4 are drawn from the change tests in the theory, and each has a prompt you can copy to build it.</p>
+    <p>Each version changes one relationship in the room. Versions 1, 5, and 6 are built. Versions 2 to 4 are drawn from the change tests in the theory, and each has a prompt you can copy to build it.</p>
     <div class="versions">
       <article class="ver built">
         <div class="no">Version 1</div>
@@ -109,6 +114,12 @@ footer{text-align:center;font-size:14px;color:var(--muted)}
         <h3>The Class Book</h3>
         <p>You are a pupil. Choose a helmet or the crank before each of four lessons, whisper, lift your helmet, or take the book. Then decide what the class's own book says.</p>
         <div class="foot"><span class="stamp live">Built</span><a class="btn small" href="play/v5.html">Play</a><a class="btn small" href="making/v5.html">How it was made</a></div>
+      </article>
+      <article class="ver built">
+        <div class="no">Version 6</div>
+        <h3>Le Contre-Livre (The Counter-Book)</h3>
+        <p>Three bench rows with a voltage gradient. Load paired Canon and Counter-Text lines into the hopper, modulate crank speed, and pause to whisper so the class writes <i>Le Contre-Livre</i> before the Inspector arrives.</p>
+        <div class="foot"><span class="stamp live">Built</span><a class="btn small" href="play/v6.html">Play</a><a class="btn small" href="making/v6.html">Provenance, process &amp; prompts</a></div>
       </article>
       <article class="ver">
         <div class="no">Version 2</div>
@@ -1239,6 +1250,26 @@ Before building, state in a few lines what the player now does, what new tension
     <div><a class="btn" href="making/v5.html">Read the making of version 5</a></div>
   </section>
 
+  <section class="sheet" id="making-v6">
+    <div class="eyebrow">SCION Game Studio 2.0 · Independent Play Critic Verified</div>
+    <h2>How version 6 was made: Le Contre-Livre</h2>
+    <p>Version 6 (<i>Le Contre-Livre / The Counter-Book</i>) was built under the SCION Game Studio 2.0 prompt to complete Marshall McLuhan's Tetrad on Villemard's 1910 postcard, grounded in Soyoun Jang's <a href="https://soyjang.github.io/archive-of-past-futures/#intro">Archive of Past Futures</a>. Made by <b>Watson Hartsoe</b>, in collaboration with <b>Jay David Bolter</b> and <b>Collin Freeman</b>.</p>
+    <p>In the 1910 print, only two laws of media are visible: the apparatus <b>Enhances</b> the rapid transfer of books into pupils' heads and <b>Obsolesces</b> slow reading. Version 6 makes the other two quadrants playable across a three-row voltage gradient: cranking at 120 RPM overdrive triggers <b>Reversal</b> (locking the front row into galvanic dogma and spliced slogans), while loading paired Canon and Counter-Text volumes and pausing the crank triggers <b>Retrieval</b> (the whispered study circle that writes <i>Le Contre-Livre</i>).</p>
+    <p>Before restyling into this site's off-register chromolithograph print aesthetic, the simulation was audited by an independent critic subagent across six play styles (catching and repairing a 3-slot FIFO eviction paradox and turn-0 action farming).</p>
+    <div class="prompt"><div class="bar"><span>Version 6 build &amp; remix prompt</span><button class="btn small" type="button" data-copy="v6">Copy</button></div><pre id="v6Text">[skip theory] Build "The Crank Boy — Version 6: Le Contre-Livre" as one self-contained HTML file in the print style of Villemard's "At School" (c. 1910): off-register colour fills shifted 1.25px from ink outlines, diagonal hatching, paper grain, and IM Fell English typography, with zero emojis anywhere.
+
+The classroom has three bench rows with a voltage gradient from the hand-cranked dynamo:
+- Row 1 (Émile &amp; Gustave, Front): 70V steady / 120V overdrive. High syllabus absorption, but overdrive locks dogma and fuses incompatible claims into technocratic slogans (McLuhan's Reversal).
+- Row 2 (Lucien &amp; Marcel, Middle): 50V steady. Balanced reception.
+- Row 3 (Claire &amp; René, Window): 25V steady / 10V slow. Official dogma attenuates before reaching the back row; Claire records observations from outside the window.
+
+Provide three one-click Topic Pair buttons (History 1515, Human Motor, The Book) that interleave an Orthodox Canon claim and a Counter-Text claim in the hopper, a guided Next Step banner, a draggable hand-crank dial (0 Stop, 1 Slow 30 RPM, 2 Steady 60 RPM, 3 Fast 120 RPM), and a Stop &amp; Whisper action that resolves contradictions into chapters of Le Contre-Livre (McLuhan's Retrieval). End with a Two-Stage Inspection testing both Stage I (Syllabus quota) and Stage II (Unscripted counterfactual question).</pre></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
+      <a class="btn" href="play/v6.html">Play version 6, Le Contre-Livre</a>
+      <a class="btn small" href="making/v6.html">Read the making of version 6 (provenance, critic audit &amp; prompts)</a>
+    </div>
+  </section>
+
   <section class="sheet" id="ledger">
     <h2>Ledger</h2>
     <h3>Documented</h3>
@@ -1254,12 +1285,14 @@ Before building, state in a few lines what the player now does, what new tension
     <div class="tw"><table>
       <tr><th>Path</th><th>What it is</th></tr>
       <tr><td><a href="play/v1.html"><code>play/v1.html</code></a></td><td>Version 1, the whole game in one file</td></tr>
+      <tr><td><a href="play/v5.html"><code>play/v5.html</code></a></td><td>Version 5, The Class Book, in one file</td></tr>
+      <tr><td><a href="making/v5.html"><code>making/v5.html</code></a></td><td>How version 5 was made: provenance, process, theory, copyable prompts</td></tr>
+      <tr><td><a href="play/v6.html"><code>play/v6.html</code></a></td><td>Version 6, Le Contre-Livre (The Counter-Book), in one file</td></tr>
+      <tr><td><a href="making/v6.html"><code>making/v6.html</code></a></td><td>How version 6 was made: provenance, collaborators, critic audit, copyable prompts</td></tr>
       <tr><td><a href="scion/case-01.html"><code>scion/case-01.html</code></a></td><td>SCION Case 01: the research case and its playable lesson</td></tr>
       <tr><td><a href="scion/process.html"><code>scion/process.html</code></a></td><td>Case 01 provenance, collaborators, process and copyable prompts</td></tr>
       <tr><td><a href="docs/scion.md"><code>docs/scion.md</code></a></td><td>The SCION brief for Case 01</td></tr>
-      <tr><td><a href="play/v5.html"><code>play/v5.html</code></a></td><td>Version 5, The Class Book, in one file</td></tr>
-      <tr><td><a href="making/v5.html"><code>making/v5.html</code></a></td><td>How version 5 was made: provenance, process, theory, copyable prompts</td></tr>
-      <tr><td><a href="docs/scion-game-studio-2.md"><code>docs/scion-game-studio-2.md</code></a></td><td>The SCION Game Studio 2.0 instruction used for version 5</td></tr>
+      <tr><td><a href="docs/scion-game-studio-2.md"><code>docs/scion-game-studio-2.md</code></a></td><td>The SCION Game Studio 2.0 instruction used for versions 5 and 6</td></tr>
       <tr><td><a href="docs/multiplane-animation-studio.md"><code>docs/multiplane-animation-studio.md</code></a></td><td>The drawing-agent prompt used to restyle version 5</td></tr>
       <tr><td><a href="assets/favicon.svg"><code>assets/favicon.svg</code></a></td><td>The crank boy, as the site's icon</td></tr>
       <tr><td><a href="docs/theory.md"><code>docs/theory.md</code></a></td><td>The theory of play written before the build</td></tr>
@@ -1291,7 +1324,7 @@ Move the method to the climate-futures case. A boy works a hand pump that feeds 
 Keep a bounded season ending at a bell or a rainfall, an authority whose record can disagree with what the households observe, and a ledger separating documented history from invention. Before building, state what the player does, what the tension is, and what can be discovered without being told.`
 };
 const pre=id=>document.getElementById(id).textContent;
-const SOURCES={v2:()=>PROMPTS.v2,v3:()=>PROMPTS.v3,v4:()=>PROMPTS.v4,scion:()=>pre('scionText'),build:()=>pre('buildText'),commit:()=>pre('commitText'),remix:()=>pre('remixText')};
+const SOURCES={v2:()=>PROMPTS.v2,v3:()=>PROMPTS.v3,v4:()=>PROMPTS.v4,v6:()=>pre('v6Text'),scion:()=>pre('scionText'),build:()=>pre('buildText'),commit:()=>pre('commitText'),remix:()=>pre('remixText')};
 document.querySelectorAll('[data-copy]').forEach(b=>{
   b.addEventListener('click',()=>{
     const text=SOURCES[b.dataset.copy](), label=b.textContent;
