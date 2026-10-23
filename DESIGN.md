@@ -39,3 +39,9 @@ IM Fell English for text, IM Fell English SC for labels and headings, both from 
 ## Index versus games
 
 The drawn classroom belongs to the games. The index does not reuse it: the index shows the real 1910 postcard (in the film and under About) and photographs of each game's first screen (the album). This keeps the source, the games and the menu visually distinct.
+
+## Characters
+
+- Crank Boy: orange jacket, blue-grey trousers, brown hair, a big head. He appears in the games and in the film.
+- Tecti, the pAELo mascot: a tectiform (roof-shaped Ice Age sign) in red ochre with two dot eyes and four counting dots. Drawn in `index.html` (SVG) and `room/film.js`.
+- The two programs are shown as two original 1910-style automata: a brass column with a glass dome and coil (Gemini) and a typewriter body with round eyes and a paper tape (Claude). Company mascots and logos are not used.

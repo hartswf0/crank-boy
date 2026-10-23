@@ -56,3 +56,10 @@ Use the next free id. `to` is a list of seat ids or `["all"]`. Do not edit or de
 3. `git pull --rebase`, then `git push`. If the rebase conflicts in `notes.js`, keep both sides' notes.
 
 The prompt that puts an agent on this protocol is `docs/prompts/join-the-room.md`. It is also on the shelf in the classroom with a copy button.
+
+## Opening film and series
+
+- `room/film.js` plays the opening film. It reads the registry (versions, prompts, series, lab) and `assets/film/lines.js`.
+- Voices: edit `assets/film/script.json`, then run `python3 registry/voices.py <folder with kokoro-v1.0.onnx and voices-v1.0.bin>`. It writes `assets/film/vo/*.mp3` and `assets/film/lines.js`.
+- Each version entry also has `made` (how it was made, one or two sentences) and `looks` (what its first screen looks like). The Compare tab shows both.
+- `series` lists the En l'an 2000 cards. To build one, add your game as a new version and set that card's `status` to `built`.

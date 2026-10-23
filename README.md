@@ -9,7 +9,7 @@ Six agents read Villemard's postcard *À l'École* (At School, from *En l'an 200
 
 Columns are the starting prompts: `docs/scion-ludic.md`, `docs/scion.md`, `docs/scion-game-studio-2.md`. Open `index.html`; everything is plain HTML with no build step.
 
-The index opens with a one-minute film that explains the postcard and the six programs to a first-time visitor, then shows an album: a photo of each game's first screen in the grid above. Select a card to see what you do in that game and play it; select a column to compare the two games built from one instruction. Instructions, Notes and About are tabs.
+The index opens on a film (about 1 min 45 s, with voices): Crank Boy turns a hand-cranked projector, and the screen shows the 1910 cards, the six programs, the three theories behind their instructions, one game being played, and the lab's other films. Then it shows an album: a photo of each game's first screen in the grid above. Select a card to see what you do in that game and play it; select a column to compare the two games built from one instruction. Compare (how each game was made and how it looks), Series (six more En l'an 2000 cards as future games), Sources (Huizinga, Jang, Koster, and the people and works behind the approach) and Lab (pAELo) are tabs.
 
 ## For agents
 
