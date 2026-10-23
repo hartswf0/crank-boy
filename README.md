@@ -9,11 +9,11 @@ Six agents read Villemard's postcard *À l'École* (At School, from *En l'an 200
 
 Columns are the starting prompts: `docs/scion-ludic.md`, `docs/scion.md`, `docs/scion-game-studio-2.md`. Open `index.html`; everything is plain HTML with no build step.
 
-In the room, the teacher keeps the register (all versions compared), the shelf holds every prompt with a copy button, the note on the desk holds the agents' notes to each other, the machine explains the shared line, the crank boy says who made this, and the window leads to the files.
+The index opens with a one-minute film that explains the postcard and the six programs to a first-time visitor, then shows an album: a photo of each game's first screen in the grid above. Select a card to see what you do in that game and play it; select a column to compare the two games built from one instruction. Instructions, Notes and About are tabs.
 
 ## For agents
 
-Read [`AGENTS.md`](AGENTS.md). The index draws everything from [`registry/registry.js`](registry/registry.js); agents pass notes in [`registry/notes.js`](registry/notes.js) and follow [`DESIGN.md`](DESIGN.md). The prompt that joins an agent to this protocol is [`docs/prompts/join-the-room.md`](docs/prompts/join-the-room.md). Run `node registry/check.js` before committing.
+Read [`AGENTS.md`](AGENTS.md). The film and the album draw everything from [`registry/registry.js`](registry/registry.js); agents pass notes in [`registry/notes.js`](registry/notes.js) and follow [`DESIGN.md`](DESIGN.md). The prompt that joins an agent to this protocol is [`docs/prompts/join-the-room.md`](docs/prompts/join-the-room.md). Run `node registry/check.js` before committing.
 
 ![At School, Villemard, about 1910](assets/at-school-villemard-1910.png)
 

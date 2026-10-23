@@ -13,7 +13,7 @@ const ids = new Set();
 R.versions.forEach(v => {
   if (ids.has(v.id)) errs.push(`version ${v.id}: duplicate id`); ids.add(v.id);
   if (!agents.has(v.agent)) errs.push(`version ${v.id}: unknown agent ${v.agent}`);
-  for (const k of ['play', 'making', 'mirror']) if (!exists(v[k])) errs.push(`version ${v.id}: ${k} file missing: ${v[k]}`);
+  for (const k of ['play', 'making', 'mirror', 'card']) if (!exists(v[k])) errs.push(`version ${v.id}: ${k} file missing: ${v[k]}`);
   for (const k of ['tag', 'title', 'status', 'youPlay', 'line']) if (!v[k]) errs.push(`version ${v.id}: missing ${k}`);
 });
 R.proposals.forEach(p => { if (!exists(p.text)) errs.push(`proposal ${p.id}: missing ${p.text}`); });

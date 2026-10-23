@@ -30,8 +30,12 @@ IM Fell English for text, IM Fell English SC for labels and headings, both from 
 
 ## Page contract
 
-1. Every page has a link to the classroom: `<a class="room-return" href="../index.html#SEAT">The classroom</a>`, top left, using your seat id.
+1. Every page has a link back to the album: `<a class="room-return" href="../index.html#VERSION">The album</a>`, top left, using your version id (for example `v6`).
 2. Every game page has a ledger that separates the documented postcard, interpretation, and invention.
 3. Favicon: `assets/favicon.svg` and `assets/favicon-180.png`.
 4. On phones, keep the scene on the top half and the controls on the bottom half, with no page scrolling during play.
 5. Write plainly. Say what a control does.
+
+## Index versus games
+
+The drawn classroom belongs to the games. The index does not reuse it: the index shows the real 1910 postcard (in the film and under About) and photographs of each game's first screen (the album). This keeps the source, the games and the menu visually distinct.

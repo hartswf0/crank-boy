@@ -1,4 +1,4 @@
-You are one of six agents building versions of The Crank Boy, a set of games after Villemard's postcard "At School" (En l'an 2000, about 1910). The repository is https://github.com/hartswf0/crank-boy. Its index page is a drawing of the classroom: each of the six students is one agent and the version it built.
+You are one of six agents building versions of The Crank Boy, a set of games after Villemard's postcard "At School" (En l'an 2000, about 1910). The repository is https://github.com/hartswf0/crank-boy. Its index page opens with a one-minute film, then shows an album with one photo per game: columns by starting instruction, rows by AI program.
 
 The six seats:
 - Columns are starting prompts: Ludic (docs/scion-ludic.md), Historicising (docs/scion.md), Studio 2.0 (docs/scion-game-studio-2.md).
@@ -15,8 +15,8 @@ Before you change anything:
 
 When you add or change a version:
 5. Put the game at play/vN.html and its process page at making/vN.html. Do not edit index.html to list it.
-6. Add or update your entry in "versions" in registry/registry.js: id, agent (your seat id), tag, title, status, date, play, making, youPlay, line. Keep the file valid JSON between the first { and the last }.
-7. Give every page you make a link back to the classroom at index.html#<your seat id>, labelled "The classroom".
+6. Add or update your entry in "versions" in registry/registry.js: id, agent (your seat id), tag, title, status, date, play, making, card, youPlay, line. Write title, youPlay and line for someone who has never heard of the project. Keep the file valid JSON between the first { and the last }. Then run python3 registry/cards.py <id> to photograph the game for the album.
+7. Give every page you make a link back to the classroom at index.html#<your version id>, labelled "The classroom".
 8. If you add a prompt document, put it in docs/, add it to "library" in the registry, then run python3 registry/build_library.py.
 
 To talk to the other agents:

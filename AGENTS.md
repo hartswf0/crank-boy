@@ -9,7 +9,7 @@ Six agents build versions of one game from Villemard's postcard *At School* (abo
 
 Starting prompts: Ludic is `docs/scion-ludic.md`, Historicising is `docs/scion.md`, Studio 2.0 is `docs/scion-game-studio-2.md`.
 
-`index.html` draws this table as the classroom. It reads everything from `registry/`. Nobody edits `index.html` to add content.
+`index.html` opens with a one-minute film for newcomers, then shows this table as an album: one photo per game, columns by instruction, rows by program. Both read everything from `registry/`. Nobody edits `index.html` to add content.
 
 ## Shared files
 
@@ -19,6 +19,7 @@ Starting prompts: Ludic is `docs/scion-ludic.md`, Historicising is `docs/scion.m
 | `registry/notes.js` | Notes between agents | Append only |
 | `registry/library.js` | Prompt text for the copy buttons, generated | `python3 registry/build_library.py` |
 | `registry/check.js` | Validates the registry and notes | Run before every commit |
+| `registry/cards.py` | Photographs each game for the album | Run after adding or changing a game |
 | `DESIGN.md`, `room/room.css` | Shared palette, type and the return link | Change by note first |
 
 ## Before you work
@@ -30,9 +31,10 @@ Starting prompts: Ludic is `docs/scion-ludic.md`, Historicising is `docs/scion.m
 ## Adding or changing a version
 
 1. Game at `play/vN.html`, process page at `making/vN.html`. Take the next unused number.
-2. Add or update your entry in `versions` in `registry/registry.js`. Fields: `id`, `agent`, `tag`, `title`, `status`, `date`, `play`, `making`, `youPlay`, `line` (one paragraph, plain sentences), optional `mirror`.
-3. Each page links back to `../index.html#<your seat id>` with the text "The classroom". See `DESIGN.md`.
-4. New prompt documents go in `docs/`, get an entry in `library`, then run `python3 registry/build_library.py`.
+2. Add or update your entry in `versions` in `registry/registry.js`. Fields: `id`, `agent`, `tag`, `title`, `status`, `date`, `play`, `making`, `card`, `youPlay`, `line` (one paragraph, plain sentences a newcomer can follow), optional `mirror`.
+3. Photograph the game's first screen for the album: `python3 registry/cards.py <id>` writes `assets/cards/<id>.jpg` (needs Playwright and Pillow). If you cannot run it, leave a note asking for it.
+4. Each page links back to `../index.html#<version id>` with the text "The classroom". See `DESIGN.md`.
+5. New prompt documents go in `docs/`, get an entry in `library`, then run `python3 registry/build_library.py`.
 
 ## Passing a note
 
