@@ -96,12 +96,12 @@ footer{text-align:center;font-size:14px;color:var(--muted)}
     </div>
     <p class="lede">You turn the crank that powers the lesson. You are the only one in the room who is not wired in, and the only one who can see which books go into the machine.</p>
     <p>Crank steadily and the class receives the books clearly. Stop, and six heads lift to look at you. While the machine is silent you can open the hopper, read the page, swap the book, pull a wire, or read aloud. At the bell the teacher asks one question and grades the answers against his own copy.</p>
-    <div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="play/v1.html">Play lesson one</a><a class="btn" href="play/v5.html">Play version 5, The Class Book</a><a class="btn" href="play/v6.html">Play version 6, Le Contre-Livre</a><a class="btn" href="play/v7.html">Play version 7, School 2000 (Guided)</a></div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="play/v1.html">Play lesson one</a><a class="btn" href="play/v5.html">Play version 5, The Class Book</a><a class="btn" href="play/v6.html">Play version 6, Le Contre-Livre</a><a class="btn" href="play/v7.html">Play version 7, School 2000 (Guided)</a><a class="btn" href="play/v8.html">Play version 8, The Sensory Tether</a></div>
   </section>
 
   <section class="sheet" id="versions">
     <h2>Versions</h2>
-    <p>Each version changes one relationship in the room. Versions 1, 5, 6, and 7 are built. Versions 2 to 4 are drawn from the change tests in the theory, and each has a prompt you can copy to build it.</p>
+    <p>Each version changes one relationship in the room. Versions 1, 5, 6, 7, and 8 are built. Versions 2 to 4 are drawn from the change tests in the theory, and each has a prompt you can copy to build it.</p>
     <div class="versions">
       <article class="ver built">
         <div class="no">Version 1</div>
@@ -126,6 +126,12 @@ footer{text-align:center;font-size:14px;color:var(--muted)}
         <h3>The School of the Year 2000</h3>
         <p>Three-step guided play from the front-row bench. Compare Lavisse's 1902 state broadcast against an 1884 parish codex, click any figure on the chromolithograph, or run one-click paths for Counterfutures A, B, and C.</p>
         <div class="foot"><span class="stamp live">Built</span><a class="btn small" href="play/v7.html">Play</a><a class="btn small" href="making/v7.html">Provenance, process &amp; prompts</a></div>
+      </article>
+      <article class="ver built">
+        <div class="no">Version 8 · SCION LUDIC 1.0</div>
+        <h3>The Sensory Tether &amp; The Torn Folio</h3>
+        <p>Inhabit Émile (in the brass headset) or Auguste (at the crank) across five lessons. Lift your ear-cup between the Master's sweeps to witness him tearing out <i>Folio 42</i>, drag the flywheel to spit the unground page onto the floorboards, whisper with Jules, and challenge the Recitation.</p>
+        <div class="foot"><span class="stamp live">Built</span><a class="btn small" href="play/v8.html">Play</a><a class="btn small" href="making/v8.html">Provenance, process &amp; prompts</a></div>
       </article>
       <article class="ver">
         <div class="no">Version 2</div>
@@ -1293,6 +1299,24 @@ Provide three one-click Topic Pair buttons (History 1515, Human Motor, The Book)
     </div>
   </section>
 
+  <section class="sheet" id="making-v8">
+    <div class="eyebrow">SCION LUDIC 1.0 · 8-Archetype Playtest Verified</div>
+    <h2>How version 8 was made: The Sensory Tether &amp; The Torn Folio</h2>
+    <p>Version 8 (<i>The Sensory Tether &amp; The Torn Folio</i>) was built under the <b>SCION LUDIC 1.0</b> system instruction from Villemard's 1910 postcard (Claim #19 in Soyoun Jang's <a href="https://soyjang.github.io/archive-of-past-futures/#intro">Archive of Past Futures</a>). Made by <b>Watson Hartsoe</b>, in collaboration with <b>Jay David Bolter</b>, <b>Collin Freeman</b>, and <b>Soyoun Jang</b>.</p>
+    <p>Where Version 1 places you at the crank and Version 5 seats you in a pupil's helmet, Version 8 models the physical <b>Sensory Tether</b> between the brass ear-cups (<code>[listen]</code>) and the schoolroom (<code>[disconnect]</code>) across five lessons (French History, Colonial Geography, Civic Labor, the Archive of the Book, and Svante Arrhenius's 1896 Climate Futures). Clamping your helmet down captures the three clauses of the lesson and hides you from the Schoolmaster's periodic surveillance sweep, but veils the room while he tears out <i>Folio 42</i> before the hopper. Lifting your ear-cup during his blind spots lets you inspect the wall fixtures (<code>[inspect]</code>), signal Auguste to drag the flywheel to 28 RPM (<code>[modulate-crank]</code>) so the unground <i>Folio 42</i> spits onto the floorboards (<code>[rescue]</code>), and whisper with Jules (<code>[compare]</code>) to recover the missed wire clause before the Recitation Tribunal.</p>
+    <div class="prompt"><div class="bar"><span>Version 8 build &amp; remix prompt</span><button class="btn small" type="button" data-copy="v8">Copy</button></div><pre id="v8Text">[skip theory] Build "The Crank Boy · Version 8: The Sensory Tether &amp; The Torn Folio" (play/v8.html) as a single self-contained mobile-first HTML file in the exact 1910 off-register print aesthetic of The Crank Boy:
+- Palette: --card:#D6C69E, --paper:#F3ECD8, --page:#FBF7EA, --ink:#2B2320, --slate:#4F6A88, --orange:#C9733A, --red:#B44A3C, --brass:#C9A23E, --wall:#E8D59A, --green:#5F7A4E.
+- Typography: IM Fell English and IM Fell English SC, with zero emojis anywhere.
+- Favicon: link ../assets/favicon.svg and display the Crank Boy icon badge in the top header bar alongside links to ../index.html and ../making/v8.html.
+- Canvas: Render the 1910 Villemard classroom in two-plate off-register print style (flat fills shifted +2.2px, +1.5px from #2B2320 ink outlines, diagonal ink hatching on shadows, wainscot, window panes, and the slate book-grinder), with a toggle to compare against the original 1910 postcard scan (../assets/at-school-villemard-1910.png).
+- Mechanics (The Sensory Tether): The player can inhabit Émile (Pupil #3 in the brass headset) or switch roles to Auguste (the unwired boy turning the crank). Clamping the headset ([listen]) captures the 3 lesson clauses (I. Exordium, II. Corpus with a tampered censorship seam, III. Dogma) and hides the player from the Schoolmaster's periodic gaze, but veils the physical room. Lifting the ear-cup ([disconnect]) during the Master's blind spots lets the player witness the Master tearing out Folio 42, inspect classroom wall fixtures ([inspect]), signal Auguste to drag (28 RPM) or surge (95 RPM) the flywheel ([modulate-crank]) so the unground Folio 42 scrap spits onto the floorboards, rescue the scrap ([rescue]), and whisper with Jules ([compare]) to recover the missed wire clause.
+- Recitation Tribunal: At 100% bell progress across 5 lessons (French History, Colonial Geography, Civic Labor, Soyoun Jang's Archive of the Book, and Arrhenius's 1896 Climate Futures), present four choices: [recite] Orthodoxy, [question] the Seam (unlocked by wall inspection), [rewrite] with the Rescued Folio (unlocked by floor scrap rescue), or [refuse] the Helmet (triggers a 6-pupil General Helmet Strike when Solidarity &gt;= 60, or reassigns the player to the hand-crank). Include live McLuhan Tetrad meters and window.SCION_TEST.runAllArchetypes().</pre></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
+      <a class="btn" href="play/v8.html">Play version 8, The Sensory Tether</a>
+      <a class="btn small" href="making/v8.html">Read the making of version 8 (provenance, process &amp; prompts)</a>
+    </div>
+  </section>
+
   <section class="sheet" id="ledger">
     <h2>Ledger</h2>
     <h3>Documented</h3>
@@ -1314,6 +1338,8 @@ Provide three one-click Topic Pair buttons (History 1515, Human Motor, The Book)
       <tr><td><a href="making/v6.html"><code>making/v6.html</code></a></td><td>How version 6 was made: provenance, collaborators, critic audit, copyable prompts</td></tr>
       <tr><td><a href="play/v7.html"><code>play/v7.html</code></a></td><td>Version 7, The School of the Year 2000 (Guided chromolithograph edition, 8-artifact summary &amp; state graph)</td></tr>
       <tr><td><a href="making/v7.html"><code>making/v7.html</code></a></td><td>How version 7 was made: provenance, collaborators (Soyoun Jang, Jay David Bolter, Collin Freeman), SCION process &amp; prompts</td></tr>
+      <tr><td><a href="play/v8.html"><code>play/v8.html</code></a></td><td>Version 8, The Sensory Tether &amp; The Torn Folio (SCION LUDIC 1.0 mobile-first edition), in one file</td></tr>
+      <tr><td><a href="making/v8.html"><code>making/v8.html</code></a></td><td>How version 8 was made: provenance, collaborators (Watson Hartsoe, Jay David Bolter, Collin Freeman, Soyoun Jang), 8-archetype playtest &amp; copyable prompts</td></tr>
       <tr><td><a href="scion/school-2000.html"><code>scion/school-2000.html</code></a></td><td>SCION Case 01 Guided Edition (mirror of <code>play/v7.html</code>)</td></tr>
       <tr><td><a href="scion/school-2000-process.html"><code>scion/school-2000-process.html</code></a></td><td>SCION Case 01 Guided Edition process &amp; copyable prompts (mirror of <code>making/v7.html</code>)</td></tr>
       <tr><td><a href="scion/case-01.html"><code>scion/case-01.html</code></a></td><td>SCION Case 01: the research case register and its playable lesson</td></tr>
@@ -1351,7 +1377,7 @@ Move the method to the climate-futures case. A boy works a hand pump that feeds 
 Keep a bounded season ending at a bell or a rainfall, an authority whose record can disagree with what the households observe, and a ledger separating documented history from invention. Before building, state what the player does, what the tension is, and what can be discovered without being told.`
 };
 const pre=id=>document.getElementById(id).textContent;
-const SOURCES={v2:()=>PROMPTS.v2,v3:()=>PROMPTS.v3,v4:()=>PROMPTS.v4,v6:()=>pre('v6Text'),v7:()=>pre('v7Text'),scion:()=>pre('scionText'),build:()=>pre('buildText'),commit:()=>pre('commitText'),remix:()=>pre('remixText')};
+const SOURCES={v2:()=>PROMPTS.v2,v3:()=>PROMPTS.v3,v4:()=>PROMPTS.v4,v6:()=>pre('v6Text'),v7:()=>pre('v7Text'),v8:()=>pre('v8Text'),scion:()=>pre('scionText'),build:()=>pre('buildText'),commit:()=>pre('commitText'),remix:()=>pre('remixText')};
 document.querySelectorAll('[data-copy]').forEach(b=>{
   b.addEventListener('click',()=>{
     const text=SOURCES[b.dataset.copy](), label=b.textContent;

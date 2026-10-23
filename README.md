@@ -4,7 +4,7 @@ A browser game after *À l'École* (At School), from the French *En l'an 2000* i
 
 You turn the crank that powers the lesson. You are the only person in the room who is not wired in, and the only one who can see which books go into the machine. Crank steadily and the class receives the books clearly. Stop, and six heads lift. While the machine is silent you can read the page in the hopper, swap the book, pull a student's wire, or read aloud. At the bell the teacher grades every answer against his own copy.
 
-**Play:** open [`play/v1.html`](play/v1.html), [`play/v5.html`](play/v5.html), [`play/v6.html`](play/v6.html), or [`play/v7.html`](play/v7.html) ([`scion/school-2000.html`](scion/school-2000.html)), or the index page at `index.html`. Everything is plain HTML with no build step.
+**Play:** open [`play/v1.html`](play/v1.html), [`play/v5.html`](play/v5.html), [`play/v6.html`](play/v6.html), [`play/v7.html`](play/v7.html) ([`scion/school-2000.html`](scion/school-2000.html)), or [`play/v8.html`](play/v8.html), or the index page at `index.html`. Everything is plain HTML with no build step.
 
 ![At School, Villemard, about 1910](assets/at-school-villemard-1910.png)
 
@@ -20,6 +20,8 @@ You turn the crank that powers the lesson. You are the only person in the room w
 | `making/v6.html` | How version 6 was made: provenance, collaborators, critic audit, copyable prompts |
 | `play/v7.html` | Version 7, The School of the Year 2000 (Guided chromolithograph edition, 8-artifact summary & state graph) |
 | `making/v7.html` | How version 7 was made: provenance, collaborators (Soyoun Jang, Jay David Bolter, Collin Freeman), SCION process & copyable prompts |
+| `play/v8.html` | Version 8, The Sensory Tether & The Torn Folio (SCION LUDIC 1.0 mobile-first edition), in one file |
+| `making/v8.html` | How version 8 was made: provenance, collaborators (Watson Hartsoe, Jay David Bolter, Collin Freeman, Soyoun Jang), 8-archetype playtest & copyable prompts |
 | `scion/school-2000.html` | SCION Case 01 Guided Edition (mirror of `play/v7.html`) |
 | `scion/school-2000-process.html` | SCION Case 01 Guided Edition process & copyable prompts (mirror of `making/v7.html`) |
 | `docs/scion-game-studio-2.md` | The SCION Game Studio 2.0 instruction used for versions 5 and 6 |
@@ -44,12 +46,13 @@ You turn the crank that powers the lesson. You are the only person in the room w
 | 5 | The Class Book | You are a pupil: choose a helmet or the crank, then decide what the class's own book says | Built |
 | 6 | Le Contre-Livre (The Counter-Book) | Three bench rows with a voltage gradient; load conflicting book pairs and pause to whisper so the class writes *Le Contre-Livre* | Built |
 | 7 | The School of the Year 2000 (Guided Edition) | 3-step guided play from the front bench comparing Lavisse's 1902 broadcast against an 1884 parish codex across Counterfutures A, B, and C | Built |
+| 8 | The Sensory Tether & The Torn Folio | Inhabit Émile or Auguste across 5 lessons; lift your ear-cup between the Master's sweeps to rescue torn Folio 42 | Built |
 
 ## Ledger
 
-Documented: the postcard and its layout. Interpretation: that the machine turns books into a signal. Invented: the river Verse, Brécourt, Port-Ancel, every book and page, the wall map, the question, the students' names and answers, the three-row voltage gradient, and *Le Contre-Livre*.
+Documented: the postcard and its layout. Interpretation: that the machine turns books into a signal. Invented: the river Verse, Brécourt, Port-Ancel, every book and page, the wall map, the question, the students' names and answers, the three-row voltage gradient, *Le Contre-Livre*, and the torn *Folio 42* Sensory Tether lessons.
 
-SCION Case 01, Version 6, and Version 7 read the same card with Soyoun Jang's historicising method (with Jay David Bolter and Collin Freeman's tetrad work). See [`scion/process.html`](scion/process.html), [`making/v6.html`](making/v6.html), and [`making/v7.html`](making/v7.html).
+SCION Case 01, Version 6, Version 7, and Version 8 read the same card with Soyoun Jang's historicising method (with Jay David Bolter and Collin Freeman's tetrad work). See [`scion/process.html`](scion/process.html), [`making/v6.html`](making/v6.html), [`making/v7.html`](making/v7.html), and [`making/v8.html`](making/v8.html).
 
 Research context: Soyoun Jang, [Archive of Past Futures](https://soyjang.github.io/archive-of-past-futures/).
 
