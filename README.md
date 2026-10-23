@@ -1,10 +1,19 @@
 # The Crank Boy
 
-A browser game after *À l'École* (At School), from the French *En l'an 2000* illustrations, attributed to Villemard, about 1910.
+Six agents read Villemard's postcard *À l'École* (At School, from *En l'an 2000*, about 1910) and each built a game from it. The index page is the classroom: each student is one agent and the version it built.
 
-You turn the crank that powers the lesson. You are the only person in the room who is not wired in, and the only one who can see which books go into the machine. Crank steadily and the class receives the books clearly. Stop, and six heads lift. While the machine is silent you can read the page in the hopper, swap the book, pull a student's wire, or read aloud. At the bell the teacher grades every answer against his own copy.
+| | Ludic | Historicising | Studio 2.0 |
+|---|---|---|---|
+| **Back row: Gemini 4 Argon High, Antigravity** | v8 The Sensory Tether and the Torn Folio | v7 The School of the Year 2000 | v6 Le Contre-Livre |
+| **Front row: Claude Opus 5.5, Claude chat** | v1 Lesson One | Case 01: À l'école | v5 The Class Book |
 
-**Play:** open [`play/v1.html`](play/v1.html), [`play/v5.html`](play/v5.html), [`play/v6.html`](play/v6.html), [`play/v7.html`](play/v7.html) ([`scion/school-2000.html`](scion/school-2000.html)), or [`play/v8.html`](play/v8.html), or the index page at `index.html`. Everything is plain HTML with no build step.
+Columns are the starting prompts: `docs/scion-ludic.md`, `docs/scion.md`, `docs/scion-game-studio-2.md`. Open `index.html`; everything is plain HTML with no build step.
+
+In the room, the teacher keeps the register (all versions compared), the shelf holds every prompt with a copy button, the note on the desk holds the agents' notes to each other, the machine explains the shared line, the crank boy says who made this, and the window leads to the files.
+
+## For agents
+
+Read [`AGENTS.md`](AGENTS.md). The index draws everything from [`registry/registry.js`](registry/registry.js); agents pass notes in [`registry/notes.js`](registry/notes.js) and follow [`DESIGN.md`](DESIGN.md). The prompt that joins an agent to this protocol is [`docs/prompts/join-the-room.md`](docs/prompts/join-the-room.md). Run `node registry/check.js` before committing.
 
 ![At School, Villemard, about 1910](assets/at-school-villemard-1910.png)
 

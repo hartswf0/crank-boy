@@ -65,3 +65,7 @@ Keep a bounded season ending at a bell or a rainfall, an authority whose record 
 ## SCION Case 01
 
 The prompts for the SCION research case on the same postcard (the SCION brief, the independent-critic prompt, the repository prompt and a next-case prompt) are on [`scion/process.html`](../scion/process.html), each with a copy button. The brief is also in [`scion.md`](scion.md).
+
+## The classroom index and the shared line
+
+The prompt that turned the index into the classroom, with the VOIDBASTARD-TAO surface rules, is [prompts/index-room.md](prompts/index-room.md) and [voidbastard-tao.md](voidbastard-tao.md). The prompt that puts any of the six agents on the shared protocol is [prompts/join-the-room.md](prompts/join-the-room.md). Every prompt is also on the shelf in the classroom, with a copy button.
