@@ -61,3 +61,7 @@ Move the method to the climate-futures case. A boy works a hand pump that feeds 
 
 Keep a bounded season ending at a bell or a rainfall, an authority whose record can disagree with what the households observe, and a ledger separating documented history from invention. Before building, state what the player does, what the tension is, and what can be discovered without being told.
 ```
+
+## SCION Case 01
+
+The prompts for the SCION research case on the same postcard (the SCION brief, the independent-critic prompt, the repository prompt and a next-case prompt) are on [`scion/process.html`](../scion/process.html), each with a copy button. The brief is also in [`scion.md`](scion.md).

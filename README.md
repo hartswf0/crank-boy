@@ -17,6 +17,10 @@ You turn the crank that powers the lesson. You are the only person in the room w
 | `docs/theory.md` | The theory of play, written before any code |
 | `docs/scion-ludic.md` | The SCION LUDIC studio instruction the game was made under |
 | `docs/prompts.md` | Every prompt used, plus build prompts for versions 2 to 4 |
+| `scion/case-01.html` | SCION Case 01: the research case on the same postcard, with a playable lesson from the pupil's seat |
+| `scion/process.html` | Case 01 provenance, collaborators, process and copyable prompts |
+| `scion/school-2000-engine.js`, `scion/playtest.js` | Case 01 game logic and its exhaustive playtest (`node scion/playtest.js`) |
+| `docs/scion.md` | The SCION brief for Case 01 |
 | `assets/` | The postcard |
 
 ## Versions
@@ -31,6 +35,8 @@ You turn the crank that powers the lesson. You are the only person in the room w
 ## Ledger
 
 Documented: the postcard and its layout. Interpretation: that the machine turns books into a signal. Invented: the river Verse, Brécourt, Port-Ancel, every book and page, the wall map, the question, the students' names and answers.
+
+SCION Case 01 reads the same card with Soyoun Jang's historicising method (with Jay David Bolter's tetrad work) and builds a second game from a pupil's seat. See [`scion/process.html`](scion/process.html).
 
 Research context: Soyoun Jang, [Archive of Past Futures](https://soyjang.github.io/archive-of-past-futures/).
 
