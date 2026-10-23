@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>The Crank Boy</title>
 <meta name="description" content="A game after Villemard's 'At School' (c. 1910). You turn the crank that powers the classroom's book machine.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/favicon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap">
@@ -89,18 +91,24 @@ footer{text-align:center;font-size:14px;color:var(--muted)}
     <h1>The Crank Boy</h1>
     <p class="lede">You turn the crank that powers the lesson. You are the only one in the room who is not wired in, and the only one who can see which books go into the machine.</p>
     <p>Crank steadily and the class receives the books clearly. Stop, and six heads lift to look at you. While the machine is silent you can open the hopper, read the page, swap the book, pull a wire, or read aloud. At the bell the teacher asks one question and grades the answers against his own copy.</p>
-    <div><a class="btn" href="play/v1.html">Play lesson one</a></div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="play/v1.html">Play lesson one</a><a class="btn" href="play/v5.html">Play version 5, The Class Book</a></div>
   </section>
 
   <section class="sheet" id="versions">
     <h2>Versions</h2>
-    <p>Each version changes one relationship in the room. Only the first is built. The others are drawn from the change tests in the theory, and each has a prompt you can copy to build it.</p>
+    <p>Each version changes one relationship in the room. Versions 1 and 5 are built. Versions 2 to 4 are drawn from the change tests in the theory, and each has a prompt you can copy to build it.</p>
     <div class="versions">
       <article class="ver built">
         <div class="no">Version 1</div>
         <h3>Lesson One</h3>
         <p>You crank. The teacher feeds three books. Two sources in the room disagree with his copy about which way the river flows.</p>
         <div class="foot"><span class="stamp live">Built</span><a class="btn small" href="play/v1.html">Play</a></div>
+      </article>
+      <article class="ver built">
+        <div class="no">Version 5</div>
+        <h3>The Class Book</h3>
+        <p>You are a pupil. Choose a helmet or the crank before each of four lessons, whisper, lift your helmet, or take the book. Then decide what the class's own book says.</p>
+        <div class="foot"><span class="stamp live">Built</span><a class="btn small" href="play/v5.html">Play</a><a class="btn small" href="making/v5.html">How it was made</a></div>
       </article>
       <article class="ver">
         <div class="no">Version 2</div>
@@ -1224,6 +1232,13 @@ Change exactly one relationship: [WRITE THE CHANGE HERE, e.g. "the least powerfu
 Before building, state in a few lines what the player now does, what new tension that creates, and what the player can discover without being told. Then build the smallest playable lesson that tests it.</pre></div>
   </section>
 
+  <section class="sheet" id="making-v5">
+    <h2>How version 5 was made</h2>
+    <p>Version 5 came from a second conversation with Claude on the same day, under a revised studio prompt, SCION Game Studio 2.0, which adds a theory of fun and an optimization adversary to the theory of play. It was written in theory mode first, built from one prompt, then redrawn in this site's print style using the Multiplane Animation Studio prompt. Made by Watson Hartsoe with Claude, in collaboration with Jay David Bolter and Collin Freeman.</p>
+    <p>Its own page has the provenance, the context, each prompt as given with a copy button, the theory, a ledger, and what has not been tested.</p>
+    <div><a class="btn" href="making/v5.html">Read the making of version 5</a></div>
+  </section>
+
   <section class="sheet" id="ledger">
     <h2>Ledger</h2>
     <h3>Documented</h3>
@@ -1242,6 +1257,11 @@ Before building, state in a few lines what the player now does, what new tension
       <tr><td><a href="scion/case-01.html"><code>scion/case-01.html</code></a></td><td>SCION Case 01: the research case and its playable lesson</td></tr>
       <tr><td><a href="scion/process.html"><code>scion/process.html</code></a></td><td>Case 01 provenance, collaborators, process and copyable prompts</td></tr>
       <tr><td><a href="docs/scion.md"><code>docs/scion.md</code></a></td><td>The SCION brief for Case 01</td></tr>
+      <tr><td><a href="play/v5.html"><code>play/v5.html</code></a></td><td>Version 5, The Class Book, in one file</td></tr>
+      <tr><td><a href="making/v5.html"><code>making/v5.html</code></a></td><td>How version 5 was made: provenance, process, theory, copyable prompts</td></tr>
+      <tr><td><a href="docs/scion-game-studio-2.md"><code>docs/scion-game-studio-2.md</code></a></td><td>The SCION Game Studio 2.0 instruction used for version 5</td></tr>
+      <tr><td><a href="docs/multiplane-animation-studio.md"><code>docs/multiplane-animation-studio.md</code></a></td><td>The drawing-agent prompt used to restyle version 5</td></tr>
+      <tr><td><a href="assets/favicon.svg"><code>assets/favicon.svg</code></a></td><td>The crank boy, as the site's icon</td></tr>
       <tr><td><a href="docs/theory.md"><code>docs/theory.md</code></a></td><td>The theory of play written before the build</td></tr>
       <tr><td><a href="docs/scion-ludic.md"><code>docs/scion-ludic.md</code></a></td><td>The SCION LUDIC studio instruction</td></tr>
       <tr><td><a href="docs/prompts.md"><code>docs/prompts.md</code></a></td><td>Every prompt in this page, including the version prompts</td></tr>
@@ -1249,7 +1269,7 @@ Before building, state in a few lines what the player now does, what new tension
     </table></div>
   </section>
 
-  <footer>Watson Hartsoe with Claude, October 2026.</footer>
+  <footer>Watson Hartsoe with Claude, in collaboration with Jay David Bolter and Collin Freeman. October 2026.</footer>
 </div>
 
 <script>
