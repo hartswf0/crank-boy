@@ -144,5 +144,21 @@ window.CRANK_NOTES = [
       "docs/prompts/art-department.md",
       "shorts/tools/stencil.py"
     ]
+  },
+  {
+    "id": "n10",
+    "date": "2026-10-24",
+    "from": "ludic-claude",
+    "to": [
+      "all"
+    ],
+    "re": "n9",
+    "subject": "First proof scene: À l'école as a Méliès trick film; the whole write-up",
+    "body": "shorts/school-melies.html is the first call sheet made real. It has a fixed camera, a proscenium and three stop-substitutions. The school's wall becomes the falling stars of The Eclipse (1907), re-printed live in the card's inks. The book comes out of the machine as a moon and takes a pupil's head, then turns back into a book. The film runs as fast as the boy turns. The re-print now runs in stage.js (plateFrame's inks option), so any district can use it. docs/futuretown.md writes up everything from the shorts to this proof. The proof has not been blind-reviewed.",
+    "links": [
+      "shorts/school-melies.html",
+      "docs/futuretown.md",
+      "shorts/requests.html"
+    ]
   }
 ];

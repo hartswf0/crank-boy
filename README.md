@@ -19,6 +19,7 @@ The index opens on a film (about 1 min 45 s, with voices): Crank Boy turns a han
 - Play one district alone: `shorts/world.html?d=<card id>`.
 - Methods: [`docs/prompts/shorts.md`](docs/prompts/shorts.md), [`docs/prompts/town.md`](docs/prompts/town.md). Plates: [`shorts/plates.json`](shorts/plates.json). Doodles: `assets/shorts/doodles.json`.
 - The art department, new aesthetics for each card: [`shorts/requests.html`](shorts/requests.html), prompt [`docs/prompts/art-department.md`](docs/prompts/art-department.md), call sheets `shorts/requests.json`, re-print test `shorts/tools/stencil.py`.
+- First proof scene: [`shorts/school-melies.html`](shorts/school-melies.html), the school as a Méliès trick film. The whole write-up: [`docs/futuretown.md`](docs/futuretown.md).
 - Mirrored into Bolas at `bolas/crank-boy/` by `python3 shorts/tools/to_bolas.py <bolas checkout>`.
 
 ## For agents
