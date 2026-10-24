@@ -438,6 +438,62 @@ window.CRANK = {
       "title": "Operator: provenance graph",
       "file": "docs/operators/provenance-graph.md",
       "note": "How the plates are recorded"
+    },
+    {
+      "key": "op-tabletop",
+      "group": "The shorts",
+      "title": "Operator: tabletop capture",
+      "file": "docs/operators/tabletop-capture.md",
+      "note": "Game: À l'école"
+    },
+    {
+      "key": "op-sketchpad",
+      "group": "The shorts",
+      "title": "Operator: Sketchpad constraints",
+      "file": "docs/operators/sketchpad-constraints.md",
+      "note": "Game: the scrubber"
+    },
+    {
+      "key": "op-triggers",
+      "group": "The shorts",
+      "title": "Operator: Character Animator triggers",
+      "file": "docs/operators/character-animator-triggers.md",
+      "note": "Game: the barber"
+    },
+    {
+      "key": "op-jibjab",
+      "group": "The shorts",
+      "title": "Operator: JibJab recastable performance",
+      "file": "docs/operators/jibjab-recastable.md",
+      "note": "Game: phonograph and cinema; the Town's cast"
+    },
+    {
+      "key": "op-rive",
+      "group": "The shorts",
+      "title": "Operator: Rive state machines",
+      "file": "docs/operators/rive-state-machines.md",
+      "note": "Game: air cabs"
+    },
+    {
+      "key": "op-refusal",
+      "group": "The shorts",
+      "title": "Operator: state machines that refuse",
+      "file": "docs/operators/state-machines-refusal.md",
+      "note": "Game: flying firemen"
+    },
+    {
+      "key": "op-substitution",
+      "group": "The shorts",
+      "title": "Operator: drawing substitution",
+      "file": "docs/operators/drawing-substitution.md",
+      "note": "Game: motor skates"
+    },
+    {
+      "key": "town",
+      "group": "The shorts",
+      "title": "The Town: one world, seven games",
+      "file": "docs/prompts/town.md",
+      "note": "The method for the world and its games"
     }
   ],
   "influences": [
@@ -622,7 +678,29 @@ window.CRANK = {
       "test": "Three pieces cut from the card; the smallest move that breaks what the card implies.",
       "page": "shorts/school.html",
       "film": "assets/shorts/films/school.mp4",
-      "poster": "assets/shorts/films/school.jpg"
+      "poster": "assets/shorts/films/school.jpg",
+      "game": {
+        "op": "Video Puppetry: perform the crank, do not key it",
+        "doc": "docs/operators/tabletop-capture.md",
+        "goal": "Turn the crank by dragging around the dial. Each full turn sends a book down a wire; deliver twelve. Stop and the pupils lift their heads.",
+        "link": "shorts/world.html?d=school"
+      },
+      "reading": {
+        "sign": "18 Mise en abyme",
+        "why": "A filmed classroom inside a book inside a pupil inside the drawn classroom."
+      },
+      "process": [
+        "Cut three pieces: the boy above the waist, one pupil's head, the teacher's book.",
+        "Filled the holes with the card's own colours, pulled in from the edges (shorts/tools/cut.py).",
+        "Set a 3.5 s plate of a lecturer at a blackboard inside the opened book; the camera pushes into it until it fills the frame.",
+        "Kept the plate running only while the crank turns, and froze it when the boy stops."
+      ],
+      "critic": {
+        "verdict": "PARTLY",
+        "found": "The crank never visibly turned, so \"the lesson runs only while he turns\" was unproven; the book read as a television on the boy's chest.",
+        "fixed": "Drew the crank arm turning on the printed axle."
+      },
+      "learned": "The cause has to be on screen. A caption cannot carry what the picture does not show."
     },
     {
       "id": "scrubber",
@@ -637,7 +715,29 @@ window.CRANK = {
       "test": "Contact: over every frame, neither brush is ever more than 0.001 card pixels from where it was sent.",
       "page": "shorts/scrubber.html",
       "film": "assets/shorts/films/scrubber.mp4",
-      "poster": "assets/shorts/films/scrubber.jpg"
+      "poster": "assets/shorts/films/scrubber.jpg",
+      "game": {
+        "op": "Sketchpad: drag a brush; the constraints keep the legs",
+        "doc": "docs/operators/sketchpad-constraints.md",
+        "goal": "Press near a brush and drag. It follows as far as the legs reach. Polish two thirds of the floor and it turns to a mirror.",
+        "link": "shorts/world.html?d=scrubber"
+      },
+      "reading": {
+        "sign": "36 Limpid and opaque",
+        "why": "The parquet goes from opaque to a mirror that holds another stage."
+      },
+      "process": [
+        "Painted the printed legs out and cut the column and the two brushes.",
+        "Redrew the legs as brass rods solved by two-bone inverse kinematics from where the brushes are sent.",
+        "Ran the contact test over every frame: the largest slip is 0.000 card pixels.",
+        "Laid the 1957 Frigidaire stage upside down under a polish mask that grows where the brushes have been."
+      ],
+      "critic": {
+        "verdict": "PARTLY",
+        "found": "The brushes barely moved, the painted-out legs left brown smudges, and the reflection read as muddy wood.",
+        "fixed": "Larger strokes, holes refilled with copied parquet instead of blurred colour, a brighter mirror."
+      },
+      "learned": "A numeric test can pass while the picture fails. The contact test was perfect; the strokes were too small to see."
     },
     {
       "id": "barber",
@@ -652,7 +752,29 @@ window.CRANK = {
       "test": "Every joint angle is a fixed multiple of the lever's angle; nothing else moves the arms.",
       "page": "shorts/barber.html",
       "film": "assets/shorts/films/barber.mp4",
-      "poster": "assets/shorts/films/barber.jpg"
+      "poster": "assets/shorts/films/barber.jpg",
+      "game": {
+        "op": "Character Animator: triggered states on a beat",
+        "doc": "docs/operators/character-animator-triggers.md",
+        "goal": "The gauge swings left and right. Press the left or right arm as it lands. Sixteen clean cuts.",
+        "link": "shorts/world.html?d=barber"
+      },
+      "reading": {
+        "sign": "35 Mirrors face to face",
+        "why": "The machine faces the mirror, and the mirror shows the same work done by hand in 1959."
+      },
+      "process": [
+        "Cut four rods of the arms and the lever as separate pieces, each turning about its own joint.",
+        "Made every joint angle a fixed multiple of the lever's angle: forward kinematics, parent to child.",
+        "Set the 1959 barber in the oval glass of both mirrors, toned to the card's greens.",
+        "For the game, tried to take the beat from the plate's measured motion; it was too flat, so the beat is the panel's own metronome."
+      ],
+      "critic": {
+        "verdict": "PARTLY",
+        "found": "The lever never visibly moved, so the arms had no cause; the mirror footage was grey against a green card.",
+        "fixed": "A larger lever throw, greener toning."
+      },
+      "learned": "Measured motion is not always usable rhythm. Say so, and set the beat by hand."
     },
     {
       "id": "phono-cinema",
@@ -668,7 +790,29 @@ window.CRANK = {
       "test": "The picture uses the synthesiser's own loudness function, and the music's loudness is the dance's measured motion (shorts/tools/motion.py).",
       "page": "shorts/phono-cinema.html",
       "film": "assets/shorts/films/phono-cinema.mp4",
-      "poster": "assets/shorts/films/phono-cinema.jpg"
+      "poster": "assets/shorts/films/phono-cinema.jpg",
+      "game": {
+        "op": "JibJab: recast the answer, keep the performance",
+        "doc": "docs/operators/jibjab-recastable.md",
+        "goal": "Hold Speak (or use the microphone), then let go: the screen answers for exactly as long as you spoke. Choose who answers: dancers, a lecturer, a barber, a hose crew, a shadow play.",
+        "link": "shorts/world.html?d=phono-cinema"
+      },
+      "reading": {
+        "sign": "34b Sonsign",
+        "why": "Sound gives the timing; the picture follows it."
+      },
+      "process": [
+        "Cut the big horn, the receiver, the speaker's head and the woman on the screen.",
+        "Drove all three from the synthesiser's own loudness function, so picture and sound agree syllable by syllable.",
+        "Measured the 1914 dance frame by frame (shorts/tools/motion.py) and played the music as loud as the dancers move.",
+        "When keying the 1948 audience failed (its lower half is all dark), projected the whole card onto that audience's screen instead, with the heads in front."
+      ],
+      "critic": {
+        "verdict": "READS",
+        "found": "The footage sat beside the beam, not inside it.",
+        "fixed": "Left as is: the screen is where the beam lands."
+      },
+      "learned": "When a key fails, find the surface in the plate that already wants the picture: here, a screen."
     },
     {
       "id": "air-cabs",
@@ -683,7 +827,28 @@ window.CRANK = {
       "test": "Each plane's movement is the camera's movement divided by its depth.",
       "page": "shorts/air-cabs.html",
       "film": "assets/shorts/films/air-cabs.mp4",
-      "poster": "assets/shorts/films/air-cabs.jpg"
+      "poster": "assets/shorts/films/air-cabs.jpg",
+      "game": {
+        "op": "Rive: a cab that runs on states",
+        "doc": "docs/operators/rive-state-machines.md",
+        "goal": "Steer the big cab up and down. Fly into a waving hand to pick up a passenger and set them down at the star over the Opéra. Climbing tires the wings; the crank rests them.",
+        "link": "shorts/world.html?d=air-cabs"
+      },
+      "reading": {
+        "sign": "27 Movement of world",
+        "why": "The figures hold still while the world slides past them in depth."
+      },
+      "process": [
+        "Cut nine planes: the city, the nearest cab, the big cab and its two wings, a plane, the airship, two small flyers.",
+        "Moved each plane by the camera's movement divided by its depth.",
+        "Keyed a 1954 crop duster into the far sky; its thin wings broke into streaks, so it is seen through a soft gap in the sky instead."
+      ],
+      "critic": {
+        "verdict": "FAILS",
+        "found": "The incoming plane read as tape glitches, and the parallax was too small to see.",
+        "fixed": "The soft window for the plane, a wider camera move and deeper planes."
+      },
+      "learned": "Do not key thin things against similar tones. Give the archive its own window."
     },
     {
       "id": "firemen",
@@ -700,7 +865,29 @@ window.CRANK = {
       "test": "The flyers are a simulated spring and damper, stepped four times a frame from the start.",
       "page": "shorts/firemen.html",
       "film": "assets/shorts/films/firemen.mp4",
-      "poster": "assets/shorts/films/firemen.jpg"
+      "poster": "assets/shorts/films/firemen.jpg",
+      "game": {
+        "op": "State machines: flyers that refuse",
+        "doc": "docs/operators/state-machines-refusal.md",
+        "goal": "Press on the fire to aim the hose. Keep the crank turning for pressure: without water the flyers refuse to go near the fire.",
+        "link": "shorts/world.html?d=firemen"
+      },
+      "reading": {
+        "sign": "13 Milieu",
+        "why": "The figures act on a burning milieu and the milieu answers back."
+      },
+      "process": [
+        "Cut the two left flyers as one piece and the flyer above the fire, and hung them on simulated springs that lag the wind.",
+        "Threw each drop of water from the nozzle's aim at the moment it left, so the jet whips.",
+        "Laid real flames (1958) and smoke (1923) over the card's own, through soft masks, so only their light adds.",
+        "Ended on a 1947 hose crew."
+      ],
+      "critic": {
+        "verdict": "PARTLY",
+        "found": "The jet was a thin line that barely changed, so the lag could not be seen.",
+        "fixed": "Three strands with droplets, and sharper swings of the nozzle."
+      },
+      "learned": "Secondary motion is only visible when the primary motion is sharp."
     },
     {
       "id": "skates",
@@ -716,15 +903,45 @@ window.CRANK = {
       "test": "Each figure's edge is the card's own drawing, separated from the ground by colour.",
       "page": "shorts/skates.html",
       "film": "assets/shorts/films/skates.mp4",
-      "poster": "assets/shorts/films/skates.jpg"
+      "poster": "assets/shorts/films/skates.jpg",
+      "game": {
+        "op": "Drawing substitution: when a pose fails, swap the drawing",
+        "doc": "docs/operators/drawing-substitution.md",
+        "goal": "Stride left, right, left, right. The same foot twice, or too fast, and the couple falls: their drawing is swapped for the fallen man's, then back. Skate a hundred metres.",
+        "link": "shorts/world.html?d=skates"
+      },
+      "reading": {
+        "sign": "41 Bodies of attitude",
+        "why": "The bodies are a set of poses: upright, striding, down."
+      },
+      "process": [
+        "Cut ten pieces with an automatic matte: a pixel is ground when it is near a ground colour and connected to the outside, so each figure's edge is the card's own drawing.",
+        "Brought a warm light up behind the card and darkened the pieces into shadow figures on hinged legs.",
+        "Set a 1927 crowd on the horizon and, behind everything, a real shadow play."
+      ],
+      "critic": {
+        "verdict": "FAILS",
+        "found": "Solid black silhouettes of overlapping figures came out as blobs with speckle, and nothing seemed to move.",
+        "fixed": "Speckle removed, the shadow figures lightened so the drawing shows through, a longer glide and stride."
+      },
+      "learned": "Overlapping figures do not survive as solid silhouettes. Reiniger cut her figures to be read in profile; a card drawn for colour needs its drawing kept."
     }
   ],
   "shortsAbout": {
     "title": "The shorts",
-    "line": "Seven short films, one per card in the series. Each is worked by a different operator from the SCION animation swarms, and each lets in real archive film the way CINEOSIS did: shots from the cineosis-lab library, found through movingimagearchive.com's shot search, used as found, only trimmed, toned and masked.",
+    "line": "Seven cards, each worked three ways: a short film, a game, and a place in one world. Every film and game uses a different operator from the SCION animation swarms; every one lets in real archive film the way CINEOSIS does, from the cineosis-lab library; and the world over them is drawn in Secondhand Motion's doodles.",
     "page": "shorts/index.html",
     "brief": "docs/prompts/shorts.md",
     "provenance": "shorts/plates.json",
     "operatorSource": "SCION · Animation Lineage Swarms (54 standalone animation prompts)"
+  },
+  "town": {
+    "title": "The Town",
+    "page": "shorts/world.html",
+    "film": "assets/shorts/films/world.mp4",
+    "poster": "assets/shorts/films/world.jpg",
+    "line": "The seven cards as one world, joined by a drawn power line from the crank boy's machine. Nothing runs unless somebody turns the crank, and power reaches each card later the farther it is from him. Each card is a game, and the three handle-holders can be recast into each other's places: the same performance, a different hand on it.",
+    "doodles": "assets/shorts/doodles.json",
+    "doodleSource": "Quick, Draw! (Google Creative Lab, CC BY 4.0), the records chosen by Secondhand Motion (github.com/hartswf0/secondhand-motion)"
   }
 };

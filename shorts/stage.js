@@ -44,6 +44,7 @@
       for (let i = 0; i < d.data.length; i += 4) { const v = 200 + hash(i * .37) * 55; d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255; }
       g.putImageData(d, 0, 0); }
 
+    S.seek = seek;
     S.ready = (async () => {
       await document.fonts.load('40px "IM Fell English"'); await document.fonts.load('40px "IM Fell English SC"');
       if (cfg.card) {
@@ -53,10 +54,19 @@
         S.img.card = await loadImg('../' + m.card);
         for (const [k, p] of Object.entries(m.parts)) { S.parts[k] = p; p.im = await loadImg(base + 'parts/' + cfg.card + '/' + k + '.png'); }
       }
+      // several cards at once (the world): parts are 'card/name', plates are '<card>/clean', '<card>/empty', '<card>/card'
+      S.cards = {};
+      for (const c of cfg.cards || []) {
+        const m = await (await fetch(base + 'parts/' + c + '/parts.json')).json(); S.cards[c] = m;
+        S.img[c + '/clean'] = await loadImg(base + 'parts/' + c + '/clean.jpg');
+        S.img[c + '/card'] = await loadImg('../' + m.card);
+        S.img[c + '/empty'] = m.empty ? await loadImg(base + 'parts/' + c + '/empty.jpg') : S.img[c + '/clean'];
+        await Promise.all(Object.entries(m.parts).map(async ([k, p]) => { S.parts[c + '/' + k] = p; p.im = await loadImg(base + 'parts/' + c + '/' + k + '.png'); }));
+      }
       for (const [k, src] of Object.entries(cfg.images || {})) S.img[k] = await loadImg(src);
       for (const k of cfg.plates || []) S.vid[k] = await loadVid(base + 'plates/' + k + '.mp4');
       S.data = {}; for (const [k, src] of Object.entries(cfg.json || {})) S.data[k] = await (await fetch(src)).json();
-      const f = cfg.frame || [0, 0, S.img.card ? S.img.card.width : W, S.img.card ? S.img.card.height : H];
+      const f = cfg.frame || [0, 0, S.img.card ? S.img.card.width : W, S.img.card ? S.img.card.height : H];   // the world sets its own
       S.frameRect = f;
       S.fit = Math.max(W / (f[2] - f[0]), H / (f[3] - f[1]));
       S.home = { x: (f[0] + f[2]) / 2, y: (f[1] + f[3]) / 2, z: 1, r: 0 };
@@ -115,7 +125,7 @@
     // a plate inside a soft-edged region of the card: the region is blurred into a mask so no hard edge shows
     const soft = document.createElement('canvas'), sctx = soft.getContext('2d');
     S.softPlate = (name, rect, pts, blur, o = {}) => {
-      const [cw, ch] = S.manifest.size; soft.width = cw; soft.height = ch;
+      const [cw, ch] = o.size || S.manifest.size; soft.width = cw; soft.height = ch;
       sctx.drawImage(S.plateFrame(name, o), rect[0], rect[1], rect[2], rect[3]);
       sctx.globalCompositeOperation = 'destination-in'; sctx.filter = `blur(${blur}px)`; sctx.fillStyle = '#000';
       sctx.beginPath(); pts.forEach(([x, y], i) => i ? sctx.lineTo(x, y) : sctx.moveTo(x, y)); sctx.closePath(); sctx.fill();
@@ -194,10 +204,11 @@
       cfg.draw(S, t);
     };
 
+    if (cfg.manual) return S;   // the page runs its own loop and sets window.SHORT itself
     window.SHORT = { id: cfg.id, dur: DUR, fps: FPS, poster: cfg.poster || 0, cues: Array.isArray(cfg.cues) ? cfg.cues : [], ready: S.ready, frame: async i => { await S.ready; await S.drawAt(i / FPS); return cv.toDataURL('image/jpeg', .93); } };
 
     // preview: play, pause and scrub without sound (the rendered film has the sound)
-    if (!/render/.test(location.search)) S.ready.then(() => {
+    if (!cfg.manual && !/render/.test(location.search)) S.ready.then(() => {
       const bar = document.getElementById('scrub'), btn = document.getElementById('play'), tc = document.getElementById('tc');
       let playing = false, t0 = 0, start = 0, busy = false;
       const show = async t => { if (busy) return; busy = true; await S.drawAt(t); busy = false; if (bar) bar.value = t / DUR * 1000; if (tc) tc.textContent = t.toFixed(1) + ' s'; };

@@ -8,6 +8,7 @@ Reads shorts/parts/<card>.json:
    "holes": [[[x, y], ...]]}          extra regions to fill in the clean plate (painted-out props)
 Writes assets/shorts/parts/<card>/:
   clean.jpg      the card with every "fill" part and every hole filled from its surroundings
+  empty.jpg      clean.jpg with the "slot" parts (recastable actors) removed too, when there are any
   <name>.png     each part, cropped to its box, with a soft one-pixel edge (or, with "matte", only the drawing
                  inside the outline: see matte())
   parts.json     each part's box and pivot in card pixels, for shorts/stage.js
@@ -114,8 +115,12 @@ def main():
     img = Image.open(os.path.join(root, spec['card'])).convert('RGB')
     out = os.path.join(root, 'assets/shorts/parts', card)
     os.makedirs(out, exist_ok=True)
-    holes = [p['poly'] for p in spec['parts'] if p.get('fill', True)] + spec.get('holes', [])
+    holes = [p['poly'] for p in spec['parts'] if p.get('fill', True) and not p.get('slot')] + spec.get('holes', [])
     clean = fill(img, mask_of(img.size, holes, grow=2)) if holes else img
+    # a "slot" part is an actor that another actor can be recast into: it stays in clean.jpg, and empty.jpg has it removed
+    slots = [p['poly'] for p in spec['parts'] if p.get('slot')]
+    if slots:
+        fill(clean, mask_of(img.size, slots, grow=3)).save(os.path.join(out, 'empty.jpg'), quality=92)
     # "copy": [dx, dy] fills that part's hole with the card's own texture from that far away instead (floors, walls)
     for p in spec['parts']:
         if p.get('copy'):
@@ -124,7 +129,7 @@ def main():
             m = mask_of(img.size, [p['poly']], grow=3).filter(ImageFilter.GaussianBlur(2))
             clean = Image.composite(src, clean, m)
     clean.save(os.path.join(out, 'clean.jpg'), quality=92)
-    manifest = {'card': spec['card'], 'size': list(img.size), 'parts': {}}
+    manifest = {'card': spec['card'], 'size': list(img.size), 'empty': bool(slots), 'parts': {}}
     for p in spec['parts']:
         m = matte(img, p['poly'], p['matte'], spec.get('ground')) if p.get('matte') else mask_of(img.size, [p['poly']]).filter(ImageFilter.GaussianBlur(0.7))
         x0, y0, x1, y1 = mask_of(img.size, [p['poly']], grow=2).getbbox()

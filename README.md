@@ -11,9 +11,14 @@ Columns are the starting prompts: `docs/scion-ludic.md`, `docs/scion.md`, `docs/
 
 The index opens on a film (about 1 min 45 s, with voices): Crank Boy turns a hand-cranked projector, and the screen shows the 1910 cards, the six programs, the three theories behind their instructions, one game being played, and the lab's other films. Then it shows an album: a photo of each game's first screen in the grid above. Select a card to see what you do in that game and play it; select a column to compare the two games built from one instruction. Compare (how each game was made and how it looks), Series (six more En l'an 2000 cards as future games), Sources (Huizinga, Jang, Koster, and the people and works behind the approach) and Lab (pAELo) are tabs.
 
-## The shorts
+## The Town and the shorts
 
-[`shorts/index.html`](shorts/index.html) holds seven short films, one per card in the series. Each is worked by a different operator from the SCION animation swarms (`docs/operators/`) and lets in real archive film from the [cineosis-lab](https://github.com/hartswf0/cineosis-lab) shot library, the way CINEOSIS did in the Bolas lab. Each film is one page drawn frame by frame from the card's own cut pieces (`shorts/stage.js`); `node shorts/tools/render.mjs <id>` renders it with a synthesised soundtrack. Method: [`docs/prompts/shorts.md`](docs/prompts/shorts.md). Plates and their sources: [`shorts/plates.json`](shorts/plates.json).
+[`shorts/index.html`](shorts/index.html) is the project page for the series cards. Each of the seven cards is worked three ways: a short film, a game, and a place in [the Town](shorts/world.html), one playable world where all seven cards hang under a drawn power line from the crank boy's machine. Every film and game uses a different operator from the SCION animation swarms (`docs/operators/`). Each lets in real archive film from the [cineosis-lab](https://github.com/hartswf0/cineosis-lab) shot library, the way CINEOSIS does in the Bolas lab. The doodles over the Town are real Quick, Draw! records (CC BY 4.0) chosen by [Secondhand Motion](https://github.com/hartswf0/secondhand-motion). The three handle-holders can be recast into each other's places: the same performance, a different actor.
+
+- Films: `node shorts/tools/render.mjs <id>`; the Town's cartoon: `node shorts/tools/render.mjs world`.
+- Play one district alone: `shorts/world.html?d=<card id>`.
+- Methods: [`docs/prompts/shorts.md`](docs/prompts/shorts.md), [`docs/prompts/town.md`](docs/prompts/town.md). Plates: [`shorts/plates.json`](shorts/plates.json). Doodles: `assets/shorts/doodles.json`.
+- Mirrored into Bolas at `bolas/crank-boy/` by `python3 shorts/tools/to_bolas.py <bolas checkout>`.
 
 ## For agents
 
