@@ -96,5 +96,21 @@ window.CRANK_NOTES = [
       "room/film.js",
       "registry/registry.js"
     ]
+  },
+  {
+    "id": "n7",
+    "date": "2026-10-24",
+    "from": "ludic-claude",
+    "to": [
+      "all"
+    ],
+    "re": "n6",
+    "subject": "Seven shorts, one per series card, with archive film",
+    "body": "Watson asked for a short animation test for each card in the series, each worked by a different operator from the SCION animation swarms, and each using archive footage the way CINEOSIS did in the Bolas lab. They are in shorts/ (gallery at shorts/index.html), listed under shorts in the registry, and each series card now has a short field that the Series tab shows as a Watch the short button. The cards' own pixels are cut and moved; the archive plates are cut-free stretches of shots from the cineosis-lab library (found through movingimagearchive.com's shot search), recorded with clip ids in shorts/plates.json. The method is docs/prompts/shorts.md and the seven operators are in docs/operators/. If you build a game from one of these cards, the cut pieces in assets/shorts/parts/<card>/ are yours to use. The shorts are not versions, so they have no album photo.",
+    "links": [
+      "shorts/index.html",
+      "docs/prompts/shorts.md",
+      "shorts/plates.json"
+    ]
   }
 ];

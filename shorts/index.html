@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The Crank Boy · The shorts</title>
+<meta name="description" content="Seven short films, one per En l'an 2000 card in the series, each worked by a different SCION animation operator and each letting in real archive film.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/favicon-180.png">
+<link rel="stylesheet" href="../room/room.css">
+<link rel="stylesheet" href="shorts.css">
+</head>
+<body>
+<div class="wrap">
+<header class="top"><a class="room-return" href="../index.html#series">The album</a></header>
+<h1>The shorts</h1>
+<p class="lede" id="lede"></p>
+<section class="sheet">
+<h2>How each one was made</h2>
+<ol class="steps">
+<li><b>The card is the cast.</b> Moving pieces are cut out of the printed card and moved; the holes they leave are filled with the card's own colours. Nothing in the card is redrawn or generated.</li>
+<li><b>One operator per card.</b> Each short follows one prompt from the SCION animation swarms: its theorem, its primitives and its numeric test. The test is computed in the page.</li>
+<li><b>Archive film, the CINEOSIS way.</b> CINEOSIS (in the Bolas lab) set its figures into unaltered archive shots from the cineosis-lab library, which were found through movingimagearchive.com's shot search, one plain-language query per shot. These shorts use the same library the other way round: the archive comes into the card, as a mirror, a screen, a reflection, a sky, a fire, a backdrop. Each plate is a cut-free stretch of one shot, trimmed, toned and masked, never painted. Its title is on screen and in the ledger.</li>
+<li><b>Every frame from its time.</b> Each short is one page (<code>shorts/stage.js</code>) that can draw any frame from the time alone. <code>shorts/tools/render.mjs</code> photographs every frame and adds a soundtrack synthesised from the page's cues. Nothing in the sound is sampled.</li>
+<li><b>A blind critic.</b> A reviewer who had not seen the intent described contact sheets of all seven. Two failed and four partly read; each was fixed once and not reviewed again.</li>
+</ol>
+<div class="row"><button type="button" data-copy="shorts">Copy the method</button><a class="btn" href="../docs/prompts/shorts.md">Read the method</a><a class="btn" href="plates.json">The plates and their sources</a></div>
+</section>
+<div class="grid" id="films"></div>
+<section class="sheet" id="platelist">
+<h2>The plates</h2>
+<p class="meta">Every archive shot used, from the cineosis-lab shot library (github.com/hartswf0/cineosis-lab).</p>
+<div id="plates"><p class="meta">The list loads from <a href="plates.json">plates.json</a>.</p></div>
+</section>
+</div>
+<script src="../registry/registry.js"></script>
+<script src="../registry/library.js"></script>
+<script>
+const R = window.CRANK, T = window.CRANK_TEXT || {}, A = R.shortsAbout;
+const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const opKey = { 'gilliam-cutout-metamorphosis': 'op-gilliam', 'inverse-kinematics': 'op-ik', 'forward-kinematics': 'op-fk', 'sound-to-action': 'op-sound',
+  'multiplane-parallax': 'op-multiplane', 'secondary-dynamics': 'op-secondary', 'reiniger-shadow-theatre': 'op-reiniger' };
+document.getElementById('lede').textContent = A.line;
+const card = id => R.series.find(s => s.id === id) || {};
+document.getElementById('films').innerHTML = R.shorts.map(s => {
+  const key = opKey[s.doc.split('/').pop().replace('.md', '')];
+  return `<article class="sheet film" id="${esc(s.id)}">
+    <video controls preload="none" playsinline poster="../${esc(s.poster)}" src="../${esc(s.film)}" aria-label="${esc(s.title)}, the short"></video>
+    <h2>${esc(s.title)}</h2>
+    <p class="op">Operator: ${esc(s.operator)}</p>
+    <p>${esc(s.line)}</p>
+    <p class="meta">Card: ${esc(card(s.card).title)}. Archive: ${s.plates.map(esc).join('; ')}. Test: ${esc(s.test)}</p>
+    <div class="row"><a class="btn" href="../${esc(s.page)}">Open the composition</a>${key ? `<button type="button" data-copy="${key}">Copy the operator</button>` : ''}<a class="btn" href="../${esc(s.doc)}">Read the operator</a></div>
+  </article>`; }).join('');
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]'); if (!b) return;
+  const txt = T[b.dataset.copy]; if (!txt) return;
+  const done = () => { const o = b.textContent; b.textContent = 'Copied'; setTimeout(() => b.textContent = o, 1400); };
+  if (navigator.clipboard) navigator.clipboard.writeText(txt).then(done, () => {}); else { const t = document.createElement('textarea'); t.value = txt; document.body.append(t); t.select(); document.execCommand('copy'); t.remove(); done(); }
+});
+// play one film at a time
+document.addEventListener('play', e => document.querySelectorAll('video').forEach(v => v !== e.target && v.pause()), true);
+fetch('plates.json').then(r => r.json()).then(P => {
+  const title = id => (R.shorts.find(s => s.id === id) || {}).title;
+  document.getElementById('plates').innerHTML = `<div style="overflow-x:auto"><table style="border-collapse:collapse;font-size:15px;width:100%">
+    <thead><tr>${['Film', 'Year', 'What it shows', 'In the short'].map(h => `<th style="text-align:left;border-bottom:1.5px solid var(--ink);padding:4px 8px 4px 0;font-family:var(--display);font-weight:400">${h}</th>`).join('')}</tr></thead>
+    <tbody>${P.plates.map(p => `<tr><td style="padding:5px 8px 5px 0;vertical-align:top"><i>${esc(p.title)}</i></td><td style="padding:5px 8px 5px 0;vertical-align:top">${esc(p.year || 'not recorded')}</td><td style="padding:5px 8px 5px 0;vertical-align:top">${esc(p.shows)}</td><td style="padding:5px 0;vertical-align:top"><a href="#${esc(p.short)}">${esc(title(p.short))}</a></td></tr>`).join('')}</tbody></table></div>`;
+}).catch(() => {});
+if (location.hash) setTimeout(() => { const el = document.getElementById(location.hash.slice(1)); el && el.scrollIntoView(); }, 50);
+</script>
+</body>
+</html>

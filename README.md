@@ -11,6 +11,10 @@ Columns are the starting prompts: `docs/scion-ludic.md`, `docs/scion.md`, `docs/
 
 The index opens on a film (about 1 min 45 s, with voices): Crank Boy turns a hand-cranked projector, and the screen shows the 1910 cards, the six programs, the three theories behind their instructions, one game being played, and the lab's other films. Then it shows an album: a photo of each game's first screen in the grid above. Select a card to see what you do in that game and play it; select a column to compare the two games built from one instruction. Compare (how each game was made and how it looks), Series (six more En l'an 2000 cards as future games), Sources (Huizinga, Jang, Koster, and the people and works behind the approach) and Lab (pAELo) are tabs.
 
+## The shorts
+
+[`shorts/index.html`](shorts/index.html) holds seven short films, one per card in the series. Each is worked by a different operator from the SCION animation swarms (`docs/operators/`) and lets in real archive film from the [cineosis-lab](https://github.com/hartswf0/cineosis-lab) shot library, the way CINEOSIS did in the Bolas lab. Each film is one page drawn frame by frame from the card's own cut pieces (`shorts/stage.js`); `node shorts/tools/render.mjs <id>` renders it with a synthesised soundtrack. Method: [`docs/prompts/shorts.md`](docs/prompts/shorts.md). Plates and their sources: [`shorts/plates.json`](shorts/plates.json).
+
 ## For agents
 
 Read [`AGENTS.md`](AGENTS.md). The film and the album draw everything from [`registry/registry.js`](registry/registry.js); agents pass notes in [`registry/notes.js`](registry/notes.js) and follow [`DESIGN.md`](DESIGN.md). The prompt that joins an agent to this protocol is [`docs/prompts/join-the-room.md`](docs/prompts/join-the-room.md). Run `node registry/check.js` before committing.

@@ -1,5 +1,5 @@
 window.CRANK = {
-  "updated": "2026-10-23",
+  "updated": "2026-10-24",
   "about": "Single source for the album index and its opening film. Six agents, three starting prompts, two models. Edit this file to add or change a version; do not edit index.html for content. JSON only between the first { and the last }.",
   "postcard": {
     "title": "À l'École (At School)",
@@ -375,6 +375,69 @@ window.CRANK = {
       "title": "Remix: change one relationship",
       "file": "docs/prompts/remix.md",
       "note": "Template for a new version"
+    },
+    {
+      "key": "shorts",
+      "group": "The shorts",
+      "title": "Make a short from a series card",
+      "file": "docs/prompts/shorts.md",
+      "note": "The method for all seven shorts"
+    },
+    {
+      "key": "op-gilliam",
+      "group": "The shorts",
+      "title": "Operator: Terry Gilliam, comic cutout metamorphosis",
+      "file": "docs/operators/gilliam-cutout-metamorphosis.md",
+      "note": "À l'école"
+    },
+    {
+      "key": "op-ik",
+      "group": "The shorts",
+      "title": "Operator: inverse kinematics",
+      "file": "docs/operators/inverse-kinematics.md",
+      "note": "Un frotteur électrique"
+    },
+    {
+      "key": "op-fk",
+      "group": "The shorts",
+      "title": "Operator: forward kinematics",
+      "file": "docs/operators/forward-kinematics.md",
+      "note": "The barber"
+    },
+    {
+      "key": "op-sound",
+      "group": "The shorts",
+      "title": "Operator: sound to action",
+      "file": "docs/operators/sound-to-action.md",
+      "note": "Correspondence by phonograph and cinema"
+    },
+    {
+      "key": "op-multiplane",
+      "group": "The shorts",
+      "title": "Operator: multiplane parallax",
+      "file": "docs/operators/multiplane-parallax.md",
+      "note": "Air cabs over Paris"
+    },
+    {
+      "key": "op-secondary",
+      "group": "The shorts",
+      "title": "Operator: secondary dynamics",
+      "file": "docs/operators/secondary-dynamics.md",
+      "note": "Flying firemen"
+    },
+    {
+      "key": "op-reiniger",
+      "group": "The shorts",
+      "title": "Operator: Lotte Reiniger, articulated shadow theatre",
+      "file": "docs/operators/reiniger-shadow-theatre.md",
+      "note": "Motor skates"
+    },
+    {
+      "key": "op-provenance",
+      "group": "The shorts",
+      "title": "Operator: provenance graph",
+      "file": "docs/operators/provenance-graph.md",
+      "note": "How the plates are recorded"
     }
   ],
   "influences": [
@@ -425,7 +488,8 @@ window.CRANK = {
       "shows": "A teacher feeds books into a machine; wires carry them to the pupils' helmets.",
       "handle": "A boy turns the crank. The machine runs only while he does.",
       "game": "The Crank Boy: six versions, in the album.",
-      "status": "built"
+      "status": "built",
+      "short": "shorts/index.html#school"
     },
     {
       "id": "scrubber",
@@ -434,7 +498,8 @@ window.CRANK = {
       "shows": "A scrubbing machine with brushes and arms works across a parquet floor.",
       "handle": "A maid steers it from the far end of a long rod.",
       "game": "You steer the scrubber. It cleans only where you push it. The mistress inspects the floor, and the machine takes the credit.",
-      "status": "not built"
+      "status": "not built",
+      "short": "shorts/index.html#scrubber"
     },
     {
       "id": "barber",
@@ -443,7 +508,8 @@ window.CRANK = {
       "shows": "Mechanical arms comb and shave customers in barber chairs.",
       "handle": "One man works a panel of levers that runs every arm.",
       "game": "You work the levers. Each arm needs its lever at the right moment, and you see gauges, not faces.",
-      "status": "not built"
+      "status": "not built",
+      "short": "shorts/index.html#barber"
     },
     {
       "id": "phono-cinema",
@@ -452,7 +518,8 @@ window.CRANK = {
       "shows": "One man talks into a horn; another leans back and watches a woman projected on a screen.",
       "handle": "Someone runs the recordings and the projector.",
       "game": "You run the machine that answers. Mix recorded voices with projected pictures, and decide what the woman on the screen says back.",
-      "status": "not built"
+      "status": "not built",
+      "short": "shorts/index.html#phono-cinema"
     },
     {
       "id": "air-cabs",
@@ -461,7 +528,8 @@ window.CRANK = {
       "shows": "Winged cabs carry passengers over the boulevards and the Opéra.",
       "handle": "Each driver works the wings.",
       "game": "You fly a cab across Paris. Passengers call out routes, the wings tire, and the Opéra is in the way.",
-      "status": "not built"
+      "status": "not built",
+      "short": "shorts/index.html#air-cabs"
     },
     {
       "id": "firemen",
@@ -470,7 +538,8 @@ window.CRANK = {
       "shows": "Winged firemen pull a child from a burning building.",
       "handle": "A steam pump in the street feeds the hose the flyers hold.",
       "game": "You run the pump in the street. The flyers can only fight the fire you send water to.",
-      "status": "not built"
+      "status": "not built",
+      "short": "shorts/index.html#firemen"
     },
     {
       "id": "skates",
@@ -479,7 +548,8 @@ window.CRANK = {
       "shows": "Couples ride motorised roller skates through a park; one man has fallen.",
       "handle": "The card does not show who winds or mends the motors.",
       "game": "You keep the skates running. Wind them too far and riders fall; not enough and they stop in the road.",
-      "status": "not built"
+      "status": "not built",
+      "short": "shorts/index.html#skates"
     }
   ],
   "lab": {
@@ -537,5 +607,124 @@ window.CRANK = {
     "script": "assets/film/script.json",
     "voices": "assets/film/vo/",
     "made_with": "Kokoro (kokoro-onnx), voices af_heart (narrator), am_puck (Crank Boy), ff_siwis (French titles); recorded by registry/voices.py"
+  },
+  "shorts": [
+    {
+      "id": "school",
+      "card": "school",
+      "title": "À l'école",
+      "operator": "Terry Gilliam, comic cutout metamorphosis",
+      "doc": "docs/operators/gilliam-cutout-metamorphosis.md",
+      "plates": [
+        "Letter From an Airline Pilot (Part I)"
+      ],
+      "line": "The boy turns the crank and the lesson runs down the wires. One pupil's head comes off on its coil and the teacher's book takes its place. The book opens on a classroom that was really filmed. When the boy stops, everything stops.",
+      "test": "Three pieces cut from the card; the smallest move that breaks what the card implies.",
+      "page": "shorts/school.html",
+      "film": "assets/shorts/films/school.mp4",
+      "poster": "assets/shorts/films/school.jpg"
+    },
+    {
+      "id": "scrubber",
+      "card": "scrubber",
+      "title": "Un frotteur électrique",
+      "operator": "Inverse kinematics, contact and reach",
+      "doc": "docs/operators/inverse-kinematics.md",
+      "plates": [
+        "Frigidaire Finale 1957"
+      ],
+      "line": "The brushes are placed on the floor first and the machine's legs are solved backwards from them. Where they scrub, the parquet turns to a mirror that reflects a stage filmed in 1957.",
+      "test": "Contact: over every frame, neither brush is ever more than 0.001 card pixels from where it was sent.",
+      "page": "shorts/scrubber.html",
+      "film": "assets/shorts/films/scrubber.mp4",
+      "poster": "assets/shorts/films/scrubber.jpg"
+    },
+    {
+      "id": "barber",
+      "card": "barber",
+      "title": "The barber",
+      "operator": "Forward kinematics, hierarchical body logic",
+      "doc": "docs/operators/forward-kinematics.md",
+      "plates": [
+        "Barbers (1959)"
+      ],
+      "line": "One lever drives every joint of the mechanical arms, shoulder first and wrist on top. The mirror on the wall shows the job done by hand, by a barber filmed in 1959.",
+      "test": "Every joint angle is a fixed multiple of the lever's angle; nothing else moves the arms.",
+      "page": "shorts/barber.html",
+      "film": "assets/shorts/films/barber.mp4",
+      "poster": "assets/shorts/films/barber.jpg"
+    },
+    {
+      "id": "phono-cinema",
+      "card": "phono-cinema",
+      "title": "Correspondence by phonograph and cinema",
+      "operator": "Sound to action",
+      "doc": "docs/operators/sound-to-action.md",
+      "plates": [
+        "Fatty's Magic Pants (1914)",
+        "Let's Go To The Movies (1948)"
+      ],
+      "line": "A voice without words moves the speaker's head, the receiver and the big horn, syllable by syllable. The screen answers with a dance filmed in 1914, and the music plays as loud as the dancers move. Last, the card is shown on a 1948 picture-house screen.",
+      "test": "The picture uses the synthesiser's own loudness function, and the music's loudness is the dance's measured motion (shorts/tools/motion.py).",
+      "page": "shorts/phono-cinema.html",
+      "film": "assets/shorts/films/phono-cinema.mp4",
+      "poster": "assets/shorts/films/phono-cinema.jpg"
+    },
+    {
+      "id": "air-cabs",
+      "card": "air-cabs",
+      "title": "Air cabs over Paris",
+      "operator": "Multiplane parallax, spatial collage",
+      "doc": "docs/operators/multiplane-parallax.md",
+      "plates": [
+        "Airport America (1954)"
+      ],
+      "line": "The card is taken apart into nine planes at different distances, and as the camera drifts each slides at its own rate. A crop duster filmed in 1954 comes in low over the rooftops through the far sky.",
+      "test": "Each plane's movement is the camera's movement divided by its depth.",
+      "page": "shorts/air-cabs.html",
+      "film": "assets/shorts/films/air-cabs.mp4",
+      "poster": "assets/shorts/films/air-cabs.jpg"
+    },
+    {
+      "id": "firemen",
+      "card": "firemen",
+      "title": "Flying firemen",
+      "operator": "Secondary dynamics, inertia and restraint",
+      "doc": "docs/operators/secondary-dynamics.md",
+      "plates": [
+        "Watershed wildfire (1958)",
+        "The Balloonatic (1923)",
+        "Fire and Police Service (1947)"
+      ],
+      "line": "Each drop of water keeps the aim the nozzle had when it left, so the jet whips; the flyers ride springs behind the wind. Real fire and smoke add their light to the card's, and the jet runs into a hose crew filmed in 1947.",
+      "test": "The flyers are a simulated spring and damper, stepped four times a frame from the start.",
+      "page": "shorts/firemen.html",
+      "film": "assets/shorts/films/firemen.mp4",
+      "poster": "assets/shorts/films/firemen.jpg"
+    },
+    {
+      "id": "skates",
+      "card": "skates",
+      "title": "Motor skates",
+      "operator": "Lotte Reiniger, articulated shadow theatre",
+      "doc": "docs/operators/reiniger-shadow-theatre.md",
+      "plates": [
+        "Autoraces op boulevard Scheveningen (1927)",
+        "Industry on Parade"
+      ],
+      "line": "A light comes up behind the card and the skaters turn to shadow figures on hinged legs. The man who fell tries to get up and falls again. A 1927 crowd watches from the horizon, and the screen behind them becomes a real shadow play.",
+      "test": "Each figure's edge is the card's own drawing, separated from the ground by colour.",
+      "page": "shorts/skates.html",
+      "film": "assets/shorts/films/skates.mp4",
+      "poster": "assets/shorts/films/skates.jpg"
+    }
+  ],
+  "shortsAbout": {
+    "title": "The shorts",
+    "line": "Seven short films, one per card in the series. Each is worked by a different operator from the SCION animation swarms, and each lets in real archive film the way CINEOSIS did: shots from the cineosis-lab library, found through movingimagearchive.com's shot search, used as found, only trimmed, toned and masked.",
+    "page": "shorts/index.html",
+    "brief": "docs/prompts/shorts.md",
+    "provenance": "shorts/plates.json",
+    "operatorSource": "SCION · Animation Lineage Swarms (54 standalone animation prompts)"
   }
 };
