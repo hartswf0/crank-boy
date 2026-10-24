@@ -13,7 +13,7 @@ esc = html.escape
 if os.path.isdir(out):
     shutil.rmtree(out)
 copy = ['shorts', 'assets/shorts', 'assets/series', 'room', 'docs/operators']
-files = ['assets/favicon.svg', 'assets/favicon-180.png', 'registry/registry.js', 'registry/library.js', 'docs/prompts/shorts.md', 'docs/prompts/town.md']
+files = ['assets/favicon.svg', 'assets/favicon-180.png', 'registry/registry.js', 'registry/library.js', 'docs/prompts/shorts.md', 'docs/prompts/town.md', 'docs/prompts/art-department.md']
 for d in copy:
     shutil.copytree(os.path.join(root, d), os.path.join(out, d), ignore=shutil.ignore_patterns('tools', '*.cues.json'))
 for f in files:
@@ -56,7 +56,7 @@ page = f'''<!doctype html><html lang="en" data-root="../"><head><meta charset="u
 <p>{esc(R["shortsAbout"]["line"])}</p>
 <div class="cb-hero"><video controls preload="none" playsinline poster="{esc(T["poster"])}" src="{esc(T["film"])}" aria-label="The Town, the cartoon"></video>
 <div><h2>The Town</h2><p>{esc(T["line"])}</p>
-<div class="cb-act"><a href="shorts/world.html">Play the town</a><a href="shorts/index.html">The project page</a><a href="https://github.com/hartswf0/crank-boy">Source</a></div></div></div>
+<div class="cb-act"><a href="shorts/world.html">Play the town</a><a href="shorts/index.html">The project page</a><a href="shorts/requests.html">The art department</a><a href="https://github.com/hartswf0/crank-boy">Source</a></div></div></div>
 <section class="sec"><div class="sechead"><h2>Toward CINEOSIS</h2><p>the archive comes into the card</p></div>
 <p>CINEOSIS sets the crash-test family inside unaltered archive shots. These shorts take shots from the same cineosis-lab library the other way round, into a surface the card already has: a mirror, a screen, a polished floor, a sky, a fire. Each short is proposed as a candidate passage for one of the 45 signs. That is a reading, not a result: none has yet had the blind review the CINEOSIS handmade passages had.</p></section>
 <section class="sec"><div class="sechead"><h2>Seven cards</h2><p>a film, a game and a place in the Town for each</p></div><div class="cb-grid">{cards}</div></section>
