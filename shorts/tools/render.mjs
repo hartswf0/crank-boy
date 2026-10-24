@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Render a short to film: node shorts/tools/render.mjs <id> [--stills 1.5,8,12]
+// Render a short to film: node shorts/tools/render.mjs <id or path without .html, e.g. play/v9> [--stills 1.5,8,12]
 // Serves the repository locally, opens shorts/<id>.html?render in Chromium, draws every frame from its time,
 // pipes the frames to ffmpeg with the synthesised soundtrack (soundtrack.py), and writes
 // assets/shorts/films/<id>.mp4 and <id>.jpg (the poster). --stills writes only those frames, to $STILLS or the temp folder.
@@ -9,7 +9,7 @@ import { fileURLToPath } from 'url';
 const require = createRequire(import.meta.url);
 const { chromium } = require('playwright');
 const here = path.dirname(fileURLToPath(import.meta.url)), root = path.resolve(here, '../..');
-const id = process.argv[2], si = process.argv.indexOf('--stills');
+const page = process.argv[2], id = path.basename(page), si = process.argv.indexOf('--stills');
 const stills = si > 0 ? process.argv[si + 1].split(',').map(Number) : null;
 const types = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.jpg': 'image/jpeg', '.png': 'image/png', '.svg': 'image/svg+xml', '.mp4': 'video/mp4', '.ttf': 'font/ttf' };
 const srv = http.createServer((q, r) => {
@@ -23,14 +23,14 @@ const srv = http.createServer((q, r) => {
 });
 await new Promise(ok => srv.listen(0, '127.0.0.1', ok));
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: 1000, height: 700 } });
-page.on('console', m => m.type() === 'error' && console.log('page:', m.text()));
-page.on('pageerror', e => console.log('page error:', e.message));
-await page.goto(`http://127.0.0.1:${srv.address().port}/shorts/${id}.html?render`);
-await page.waitForFunction(() => window.SHORT && window.SHORT.ready);
-await page.evaluate(() => SHORT.ready);
-const meta = await page.evaluate(() => ({ dur: SHORT.dur, fps: SHORT.fps, cues: SHORT.cues, poster: SHORT.poster }));
-const grab = async i => Buffer.from((await page.evaluate(i => SHORT.frame(i), i)).split(',')[1], 'base64');
+const tab = await browser.newPage({ viewport: { width: 1000, height: 700 } });
+tab.on('console', m => m.type() === 'error' && console.log('page:', m.text()));
+tab.on('pageerror', e => console.log('page error:', e.message));
+await tab.goto(`http://127.0.0.1:${srv.address().port}/${page.includes('/') ? page : 'shorts/' + page}.html?render`);
+await tab.waitForFunction(() => window.SHORT && window.SHORT.ready);
+await tab.evaluate(() => SHORT.ready);
+const meta = await tab.evaluate(() => ({ dur: SHORT.dur, fps: SHORT.fps, cues: SHORT.cues, poster: SHORT.poster }));
+const grab = async i => Buffer.from((await tab.evaluate(i => SHORT.frame(i), i)).split(',')[1], 'base64');
 if (stills) {
   const out = process.env.STILLS || os.tmpdir();
   for (const s of stills) { const f = path.join(out, `${id}-${s.toFixed(1).padStart(4, '0')}.jpg`); fs.writeFileSync(f, await grab(Math.round(s * meta.fps))); console.log(f); }

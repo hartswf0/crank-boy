@@ -296,7 +296,7 @@ function rest(){
 function detailV(v){
   const a=A[v.agent], p=P[a.prompt], sib=cell(a.prompt,a.model==='argon'?'claude':'argon'), n=notesFor(a.id).length;
   setDetail(`Instruction ${p.letter} · built by ${madeBy(a)}`,esc(v.title),
-   `<dl class="facts"><dt>You play</dt><dd>${esc(v.youPlay)}</dd><dt>What happens</dt><dd>${esc(v.line)}</dd>
+   `<dl class="facts"><dt>You play</dt><dd>${esc(v.youPlay)}</dd><dt>What happens</dt><dd>${esc(v.line)}</dd>${(()=>{const o=R.versions.filter(x=>x.agent===v.agent&&x.id!==v.id); return o.length?`<dt>Same seat</dt><dd>${o.map(x=>`<a href="#${esc(x.id)}">${esc(x.tag)} · ${esc(x.title)}</a>`).join(', ')}</dd>`:''})()}
     <dt>Made</dt><dd>${esc(v.made||'')}</dd>
     <dt>Instruction</dt><dd>${esc(p.letter)}. ${esc(p.plain)} From ${esc(theoryLine(p))}.</dd>
     ${v.mirror?`<dt>Also at</dt><dd><a href="${esc(v.mirror)}">${esc(v.mirror)}</a></dd>`:''}

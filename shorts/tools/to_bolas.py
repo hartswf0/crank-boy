@@ -12,8 +12,8 @@ esc = html.escape
 
 if os.path.isdir(out):
     shutil.rmtree(out)
-copy = ['shorts', 'assets/shorts', 'assets/series', 'room', 'docs/operators']
-files = ['assets/favicon.svg', 'assets/favicon-180.png', 'registry/registry.js', 'registry/library.js', 'docs/prompts/shorts.md', 'docs/prompts/town.md', 'docs/prompts/art-department.md', 'docs/futuretown.md']
+copy = ['shorts', 'assets/shorts', 'assets/series', 'room', 'docs/operators', 'assets/v9']
+files = ['assets/favicon.svg', 'assets/favicon-180.png', 'registry/registry.js', 'registry/library.js', 'docs/prompts/shorts.md', 'docs/prompts/town.md', 'docs/prompts/art-department.md', 'docs/futuretown.md', 'play/v9.html', 'making/v9.html', 'assets/cards/v9.jpg']
 for d in copy:
     shutil.copytree(os.path.join(root, d), os.path.join(out, d), ignore=shutil.ignore_patterns('tools', '*.cues.json'))
 for f in files:
@@ -57,6 +57,10 @@ page = f'''<!doctype html><html lang="en" data-root="../"><head><meta charset="u
 <div class="cb-hero"><video controls preload="none" playsinline poster="{esc(T["poster"])}" src="{esc(T["film"])}" aria-label="The Town, the cartoon"></video>
 <div><h2>The Town</h2><p>{esc(T["line"])}</p>
 <div class="cb-act"><a href="shorts/world.html">Play the town</a><a href="shorts/index.html">The project page</a><a href="shorts/requests.html">The art department</a><a href="shorts/school-melies.html">Proof: a trick film</a><a href="docs/futuretown.md">The write-up</a><a href="https://github.com/hartswf0/crank-boy">Source</a></div></div></div>
+<section class="sec"><div class="sechead"><h2>A better Crank Boy</h2><p>version 9, on clean plates of the card</p></div>
+<div class="cb-hero"><video controls preload="none" playsinline poster="assets/shorts/films/v9.jpg" src="assets/shorts/films/v9.mp4" aria-label="Version 9, played"></video>
+<div><p>Five image-model plates of the school card line up to the pixel, each with less in it, so the machine becomes a layer that can be taken away. The whole class is a cast of layers: six pupils whose heads bow while the crank turns and come up when it stops, the teacher, and the crank boy. Stop for long enough and the machine is gone. There was a lectern under it, and the teacher comes to it.</p>
+<div class="cb-act"><a href="play/v9.html">Play version 9</a><a href="making/v9.html">How it was made</a></div></div></div></section>
 <section class="sec"><div class="sechead"><h2>The art department</h2><p>new aesthetics for each card</p></div>
 <div class="cb-hero"><video controls preload="none" playsinline poster="assets/shorts/films/school-melies.jpg" src="assets/shorts/films/school-melies.mp4" aria-label="À l'école, a trick film"></video>
 <div><p>Each card gets its own look while it stays one town, and the test is whether a frame survives being re-printed in the card's own inks. The first proof makes the school a trick-film tableau of 1907. The camera is fixed, every change is a stop-substitution, and the wall becomes the falling stars of Méliès's <i>The Eclipse</i>, re-printed in the card's inks. The film runs as fast as the boy turns the crank.</p>

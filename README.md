@@ -34,6 +34,8 @@ Read [`AGENTS.md`](AGENTS.md). The film and the album draw everything from [`reg
 |---|---|
 | `index.html` | Index: versions, the postcard, how to play, theory, how it was made, copyable prompts |
 | `play/v1.html` | Version 1, Lesson One. The whole game in one file |
+| `play/v9.html` | Version 9, The Lectern Underneath, on clean plates of the card (`assets/v9/`) |
+| `making/v9.html` | How version 9 was made: the plates, layers by difference, the cast, the game |
 | `play/v5.html` | Version 5, The Class Book. The whole game in one file |
 | `making/v5.html` | How version 5 was made: provenance, process, theory, copyable prompts |
 | `play/v6.html` | Version 6, Le Contre-Livre (The Counter-Book). The whole game in one file |
@@ -66,6 +68,7 @@ Read [`AGENTS.md`](AGENTS.md). The film and the album draw everything from [`reg
 | 5 | The Class Book | You are a pupil: choose a helmet or the crank, then decide what the class's own book says | Built |
 | 6 | Le Contre-Livre (The Counter-Book) | Three bench rows with a voltage gradient; load conflicting book pairs and pause to whisper so the class writes *Le Contre-Livre* | Built |
 | 7 | The School of the Year 2000 (Guided Edition) | 3-step guided play from the front bench comparing Lavisse's 1902 broadcast against an 1884 parish codex across Counterfutures A, B, and C | Built |
+| 9 | The Lectern Underneath | Lesson One with the whole class as layers on aligned clean plates; stop long enough and the machine is gone, with a lectern under it | Built |
 | 8 | The Sensory Tether & The Torn Folio | Inhabit Émile or Auguste across 5 lessons; lift your ear-cup between the Master's sweeps to rescue torn Folio 42 | Built |
 
 ## Ledger
