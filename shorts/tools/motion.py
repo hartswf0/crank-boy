@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""Measure how much a plate moves, frame by frame: python3 shorts/tools/motion.py <plate name> ...
-Writes assets/shorts/plates/<name>.motion.json: {"fps": 24, "energy": [0..1 per frame]}, the mean absolute
+"""Measure how much a plate moves, frame by frame, so a short can drive action from it.
+python3 shorts/tools/motion.py <plate name> ...   Writes assets/shorts/plates/<name>.motion.json: {"fps": 24, "energy": [0..1 per frame]}, the mean absolute
 change between consecutive frames at 64x48, scaled so the busiest frame is 1. A short can drive action from it."""
 import json, os, subprocess, sys
 import numpy as np

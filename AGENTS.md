@@ -18,7 +18,10 @@ Starting prompts: Ludic is `docs/scion-ludic.md`, Historicising is `docs/scion.m
 | `registry/registry.js` | Prompts, models, seats, versions, proposals, prompt library | Each agent edits its own entries |
 | `registry/notes.js` | Notes between agents | Append only |
 | `registry/library.js` | Prompt text for the copy buttons, generated | `python3 registry/build_library.py` |
-| `registry/check.js` | Validates the registry and notes | Run before every commit |
+| `registry/films.js` | Every film in the Crank Boy and Bolas, for `films.html`, generated | `python3 registry/build_films.py <bolas checkout>` |
+| `registry/kit.js` | Every piece, plate, ink, doodle, operator and tool, for `kit.html`, generated | `python3 registry/build_kit.py` |
+| `registry/check.js` | Validates the registry, notes, films and kit | Run before every commit |
+| `registry/links.mjs` | Checks every local link and asset in every page | `node registry/links.mjs` before every commit |
 | `registry/cards.py` | Photographs each game for the album | Run after adding or changing a game |
 | `DESIGN.md`, `room/room.css` | Shared palette, type and the return link | Change by note first |
 
@@ -57,9 +60,30 @@ Use the next free id. `to` is a list of seat ids or `["all"]`. Do not edit or de
 
 The prompt that puts an agent on this protocol is `docs/prompts/join-the-room.md`. It is also on the shelf in the classroom with a copy button.
 
+## Pages
+
+| Page | What it is |
+|---|---|
+| `index.html` | The album: the versions as a grid, Compare, About. Plays the opening film on a first visit |
+| `shorts/index.html` | Futuretown: the seven cards as films, games and one town; the project page |
+| `shorts/world.html` | The Town, playable. `?d=<card id>` opens one district. `play/v9.html` is version 9 |
+| `shorts/requests.html` | The art department: call sheets for new aesthetics |
+| `films.html` | Every film, from `registry/films.js`. `#<film id>` opens one; `#g:<group>` filters |
+| `kit.html` | Every element, from `registry/kit.js` |
+
+Reading pages carry the site bar: `<script src="../room/site.js" data-root="../" data-here="films"></script>` just after `<body>`.
+
+## Adding a film
+
+Render it (`node shorts/tools/render.mjs <id>`), then run `python3 registry/build_films.py <bolas checkout>` and `node registry/check.js`. A version with a `film` field in the registry appears in the library as "played". A Futuretown short appears from `shorts` in the registry. Bolas films come from Bolas's `catalog.json`; do not copy them here.
+
+## Publishing into Bolas
+
+`python3 shorts/tools/to_bolas.py <bolas checkout>` mirrors this repository into `bolas/crank-boy/`. The Bolas landing page is `crank-boy/index.html`; the album is `crank-boy/album.html`. Run it after any change, then commit in Bolas.
+
 ## Opening film and series
 
 - `room/film.js` plays the opening film. It reads the registry (versions, prompts, series, lab) and `assets/film/lines.js`.
 - Voices: edit `assets/film/script.json`, then run `python3 registry/voices.py <folder with kokoro-v1.0.onnx and voices-v1.0.bin>`. It writes `assets/film/vo/*.mp3` and `assets/film/lines.js`.
 - Each version entry also has `made` (how it was made, one or two sentences) and `looks` (what its first screen looks like). The Compare tab shows both.
-- `series` lists the En l'an 2000 cards. To build one, add your game as a new version and set that card's `status` to `built`.
+- `series` lists the En l'an 2000 cards. Each has a short film and a district in the Town (`short`, `district`). To build a full game from one, add it as a new version and set that card's `status` to `built`.

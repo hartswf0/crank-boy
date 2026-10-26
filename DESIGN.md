@@ -30,7 +30,7 @@ IM Fell English for text, IM Fell English SC for labels and headings, both from 
 
 ## Page contract
 
-1. Every page has a link back to the album: `<a class="room-return" href="../index.html#VERSION">The album</a>`, top left, using your version id (for example `v6`).
+1. Every page links back to the album. Game and version pages use `<a class="room-return" href="../index.html#VERSION">The album</a>`, top left, with the version id (for example `v6`). Reading pages (Futuretown, films, kit, the art department, making pages for new versions) carry the site bar from `room/site.js`, which has the album, Futuretown, Films and Kit.
 2. Every game page has a ledger that separates the documented postcard, interpretation, and invention.
 3. Favicon: `assets/favicon.svg` and `assets/favicon-180.png`.
 4. On phones, keep the scene on the top half and the controls on the bottom half, with no page scrolling during play.
@@ -45,3 +45,7 @@ The drawn classroom belongs to the games. The index does not reuse it: the index
 - Crank Boy: orange jacket, blue-grey trousers, brown hair, a big head. He appears in the games and in the film.
 - Tecti, the pAELo mascot: a tectiform (roof-shaped Ice Age sign) in red ochre with two dot eyes and four counting dots. Drawn in `index.html` (SVG) and `room/film.js`.
 - The two programs are shown as two original 1910-style automata: a brass column with a glass dome and coil (Gemini) and a typewriter body with round eyes and a paper tape (Claude). Company mascots and logos are not used.
+
+## The four lanes of a picture
+
+Anything on screen in Futuretown comes from exactly one lane, and the page's ledger says which: **Card** (the printed card, cut and moved, never repainted), **Archive** (shots from the cineosis-lab library or another public archive: trimmed, toned, re-printed, never painted), **Drawn** (Quick, Draw! doodles and marks drawn by code) or **Generated** (image-model output, labelled with model, prompt and test). The test that holds the town together: a new plate or generated image must survive being re-printed in its card's eight inks (`shorts/tools/stencil.py`).

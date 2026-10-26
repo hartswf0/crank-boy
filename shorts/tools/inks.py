@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-"""A card's inks: python3 shorts/tools/inks.py <card> ... writes assets/shorts/parts/<card>/inks.json, the card's
-eight colours by k-means, darkest first (the same method as stencil.py), for re-printing archive frames live."""
+"""Write each card's eight inks, darkest first, for re-printing archive frames live (the same k-means as stencil.py).
+python3 shorts/tools/inks.py <card> ...   writes assets/shorts/parts/<card>/inks.json."""
 import json, os, sys
 import numpy as np
 from PIL import Image
